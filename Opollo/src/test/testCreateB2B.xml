@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="B2B">
+    <test name="Test create new B2B order">
+        <classes>
+            <class name="com.lkhoaa.testCases.B2B.CreateB2BOrder"/>
+        </classes>
+    </test>
+</suite>

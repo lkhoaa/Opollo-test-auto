@@ -1,0 +1,50 @@
+package com.lkhoaa.model.RMS.Opollo;
+
+import com.monitorjbl.xlsx.StreamingReader;
+import io.qameta.allure.Step;
+import org.apache.poi.ss.usermodel.*;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class OpolloDamageFee {
+    @Step("Opollo file: Calculate the sum of the column amount in the 'Damaged Claim' sheet")
+    public static double sumOfOPDamageFee(String filePath) {
+        double totalSum = 0;
+        try {
+            // Load the Excel file
+            FileInputStream fis = new FileInputStream(new File(filePath));
+
+            // Create the workbook object
+            Workbook workbook = StreamingReader.builder().open(fis);
+
+            // Get the first sheet of the workbook
+            Sheet sheet = workbook.getSheet("Damage Claims");
+
+            // Define the column indices for fee name and amount
+            int amountColumnIndex = 6;  // Column index 6 (0-based)
+
+            // Iterate through each row in the sheet
+            for (Row row : sheet) {
+                // Get the fee name from the specified column
+                Cell cell = row.getCell(amountColumnIndex);
+                if (cell != null && cell.getCellType() == CellType.NUMERIC) {
+                    // Add the numeric value to the total sum
+                    totalSum += cell.getNumericCellValue();
+                }
+            }
+
+            // Print the total sum of commission amounts
+            System.out.printf("Total sum of Damaged Claim amounts on OP: ");
+            System.out.printf("%.2f\n", totalSum);
+
+            // Close the workbook and file streams
+            workbook.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return totalSum;
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "HOME_PAGE": {
+    "url": "/"
+  },
+  "LOGIN_PAGE": {
+    "url": "/sign_in"
+  },
+  "NEW_PO": {
+    "url": "/purchase_order_v2/new"
+  },
+  "NEW_B2B": {
+    "url": "/oms/b2b_orders/create"
+  }
+}

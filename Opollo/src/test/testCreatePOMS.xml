@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="POMSt">
+    <test name="Test create new POMS order">
+        <classes>
+            <class name="com.lkhoaa.testCases.POMS.CreatePOMS"/>
+        </classes>
+    </test>
+</suite>
