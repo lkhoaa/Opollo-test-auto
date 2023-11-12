@@ -17,6 +17,8 @@ public class ExcelReaderUtil {
     private Workbook workbook;
     private Sheet sheet;
     private FileInputStream fis;
+
+    //Read file excel
     public ExcelReaderUtil(File excelFileLocation, String sheetName, int startRow, int startColumn) {
         this.excelFileLocation = excelFileLocation;
         this.sheetName = sheetName;
@@ -34,23 +36,30 @@ public class ExcelReaderUtil {
         }
     }
 
-    public String getCellValue(int rowNo , int colNo) {
+    //Get cell value
+    public String getCellValue(int rowNo, int colNo) {
         Row row = sheet.getRow(rowNo);
-        Cell cell= row.getCell(colNo);
+        Cell cell = row.getCell(colNo);
         String cellValue = "";
         CellType cellType = cell.getCellType();
 
-        if(cellType.equals(CellType.STRING))
-            cellValue= cell.getStringCellValue();
+        if (cellType.equals(CellType.STRING))
+            cellValue = cell.getStringCellValue();
 
-        if(cellType.equals(CellType.NUMERIC)) {
+        if (cellType.equals(CellType.NUMERIC)) {
             NumberFormat nf = new DecimalFormat("#.####");
             cellValue = String.valueOf(nf.format(cell.getNumericCellValue()));
         }
         return cellValue;
     }
-    public int getTotalRow() { return this.totalRow; }
-    public int getTotalColumn() { return this.totalColumn; }
+
+    public int getTotalRow() {
+        return this.totalRow;
+    }
+
+    public int getTotalColumn() {
+        return this.totalColumn;
+    }
 
     public static void main(String[] args) {
         String excelFileName = "TestData.xlsx";
