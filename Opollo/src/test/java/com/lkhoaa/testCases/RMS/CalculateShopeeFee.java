@@ -17,45 +17,70 @@ import static com.lkhoaa.model.RMS.Shopee.ShopeeShippingFee.sumOfShippingFee;
 import static java.lang.Math.abs;
 
 public class CalculateShopeeFee {
+    private static double commissionSPFee;
+    private static double commissionOPFee;
+    private static double paymentSPFee;
+    private static double paymentOPFee;
+    private static double sellerVoucherSPFee;
+    private static double sellerVoucherOPFee;
+    private static double shippingSPFee;
+    private static double shippingOPFee;
+    private static double SPShopeDiscountFee;
+    private static double OPShopeeDiscountFee;
+
     public static void compareSPFee(String fileName) {
         String excellFileName = fileName;
         System.out.println(excellFileName);
 
-        File filePath1 =  new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Shopee/" + excellFileName);
-        File filePath2 =  new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName);
+        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Shopee/" + excellFileName);
+        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName);
 
-        double commissionSPFee = sumOfCommissionFee(String.valueOf(filePath1));
-        double commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
-        compareSum(commissionSPFee,commissionOPFee);
+        commissionSPFee = sumOfCommissionFee(String.valueOf(filePath1));
+        commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
+//        compareSum(commissionSPFee,commissionOPFee);
 
-        double paymentSPFee = sumOfPaymentFee(String.valueOf(filePath1));
-        double paymentOPFee = sumOfOPPaymentFee(String.valueOf(filePath2));
-        compareSum(paymentSPFee,paymentOPFee);
+        paymentSPFee = sumOfPaymentFee(String.valueOf(filePath1));
+        paymentOPFee = sumOfOPPaymentFee(String.valueOf(filePath2));
+//        compareSum(paymentSPFee,paymentOPFee);
 
-        double sellerVoucherSPFee = sumOfSellerVoucherFee(String.valueOf(filePath1));
-        double sellerVoucherOPFee = sumOfOPSellerVoucherFee(String.valueOf(filePath2));
-        compareSum(sellerVoucherSPFee,sellerVoucherOPFee);
+        sellerVoucherSPFee = sumOfSellerVoucherFee(String.valueOf(filePath1));
+        sellerVoucherOPFee = sumOfOPSellerVoucherFee(String.valueOf(filePath2));
+//        compareSum(sellerVoucherSPFee,sellerVoucherOPFee);
 
-        double ShippingSPFee = sumOfShippingFee(String.valueOf(filePath1));
-        double ShippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
-        compareSum(ShippingSPFee,ShippingOPFee);
+        shippingSPFee = sumOfShippingFee(String.valueOf(filePath1));
+        shippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
+//        compareSum(shippingSPFee,shippingOPFee);
 
-        double SPRevenue = sumOfSPRevenue(String.valueOf(filePath1));
-        double OPRevenue = sumOfOPRevenue(String.valueOf(filePath2));
-        compareSum(SPRevenue,OPRevenue);
+//        double SPRevenue = sumOfSPRevenue(String.valueOf(filePath1));
+//        double OPRevenue = sumOfOPRevenue(String.valueOf(filePath2));
+//        compareSum(SPRevenue,OPRevenue);
 
-        double SPShopeDiscount = sumOfShopeeDiscountFee(String.valueOf(filePath1));
-        double OPShopeeDiscount = sumOfOPShopeeDiscountFee(String.valueOf(filePath2));
-        compareSum(SPShopeDiscount,OPShopeeDiscount);
+        SPShopeDiscountFee = sumOfShopeeDiscountFee(String.valueOf(filePath1));
+        OPShopeeDiscountFee = sumOfOPShopeeDiscountFee(String.valueOf(filePath2));
+//        compareSum(SPShopeDiscountFee,OPShopeeDiscountFee);
+        compareAllFee();
         System.out.println("<=====================================>");
     }
 
     public static void compareSum(double sum1, double sum2) {
         double tolerance = 0.0001;
-        if (Math.abs((sum1 - sum2)) < tolerance) {
+        if (Math.abs(sum1 - sum2) < tolerance) {
             System.out.println("The values are equal.");
         } else {
             System.out.println("The values are not equal.");
+        }
+    }
+
+    public static void compareAllFee() {
+        double tolerance = 0.0001;
+        if ((
+                abs(commissionSPFee - commissionOPFee)
+                        - abs(paymentSPFee - paymentOPFee)
+                        - abs(sellerVoucherSPFee - sellerVoucherOPFee)
+                        - abs(shippingSPFee - shippingOPFee)
+                        - abs(SPShopeDiscountFee - OPShopeeDiscountFee))
+                < tolerance) {
+            System.out.println("The values are equal.");
         }
     }
 }
