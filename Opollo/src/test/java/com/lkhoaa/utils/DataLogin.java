@@ -7,7 +7,7 @@ import java.io.File;
 public class DataLogin {
     @DataProvider
     public static Object[][] loginData() {
-        String excelFileName = "TestData.xlsx";
+        String excelFileName = "/TestData.xlsx";
         File excelFileLocation = new File(System.getProperty("user.dir") + "/src/test/data/LoginCredential" + excelFileName);
         String sheet = "Login";
         int startRowIndex = 1;

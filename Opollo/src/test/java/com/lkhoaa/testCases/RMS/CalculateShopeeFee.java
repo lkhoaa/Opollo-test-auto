@@ -27,6 +27,8 @@ public class CalculateShopeeFee {
     private static double shippingOPFee;
     private static double SPShopeDiscountFee;
     private static double OPShopeeDiscountFee;
+    private static double SPRevenue;
+    private static double OPRevenue;
 
     public static void compareSPFee(String fileName) {
         String excellFileName = fileName;
@@ -51,15 +53,15 @@ public class CalculateShopeeFee {
         shippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
 //        compareSum(shippingSPFee,shippingOPFee);
 
-//        double SPRevenue = sumOfSPRevenue(String.valueOf(filePath1));
-//        double OPRevenue = sumOfOPRevenue(String.valueOf(filePath2));
+        SPRevenue = sumOfSPRevenue(String.valueOf(filePath1));
+        OPRevenue = sumOfOPRevenue(String.valueOf(filePath2));
 //        compareSum(SPRevenue,OPRevenue);
 
         SPShopeDiscountFee = sumOfShopeeDiscountFee(String.valueOf(filePath1));
         OPShopeeDiscountFee = sumOfOPShopeeDiscountFee(String.valueOf(filePath2));
 //        compareSum(SPShopeDiscountFee,OPShopeeDiscountFee);
         compareAllFee();
-        System.out.println("<=====================================>");
+        System.out.println("=====================================");
     }
 
     public static void compareSum(double sum1, double sum2) {
@@ -73,14 +75,17 @@ public class CalculateShopeeFee {
 
     public static void compareAllFee() {
         double tolerance = 0.0001;
-        if ((
-                abs(commissionSPFee - commissionOPFee)
-                        - abs(paymentSPFee - paymentOPFee)
-                        - abs(sellerVoucherSPFee - sellerVoucherOPFee)
-                        - abs(shippingSPFee - shippingOPFee)
-                        - abs(SPShopeDiscountFee - OPShopeeDiscountFee))
+        System.out.println(abs(SPRevenue - OPRevenue));
+        if ((abs(abs(commissionSPFee - commissionOPFee)
+                - abs(paymentSPFee - paymentOPFee)
+                - abs(sellerVoucherSPFee - sellerVoucherOPFee)
+                - abs(shippingSPFee - shippingOPFee)
+                - abs(SPShopeDiscountFee - OPShopeeDiscountFee)
+                - abs(SPRevenue - OPRevenue)))
                 < tolerance) {
-            System.out.println("The values are equal.");
+            System.out.println("==>> The values are equal.");
+        } else {
+            System.out.println("==>> The values are not equal.");
         }
     }
 }

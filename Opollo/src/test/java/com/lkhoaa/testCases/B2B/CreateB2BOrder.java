@@ -2,7 +2,7 @@ package com.lkhoaa.testCases.B2B;
 
 import com.lkhoaa.driver.DriverBase;
 import com.lkhoaa.model.B2BPages.NewB2BPage;
-import com.lkhoaa.model.pages.LoginPage;
+import com.lkhoaa.model.LoginPage.LoginPage;
 import com.lkhoaa.utils.DataLogin;
 import com.lkhoaa.utils.Url;
 import io.qameta.allure.Description;
