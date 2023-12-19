@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Opollo.iml" filepath="$PROJECT_DIR$/.idea/Opollo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Opollo/Opollo.iml" filepath="$PROJECT_DIR$/Opollo/Opollo.iml" />
     </modules>
   </component>
 </project>

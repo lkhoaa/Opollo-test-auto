@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test {
     public static void main(String[] args) {
@@ -15,7 +13,6 @@ public class Test {
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
         driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.manage().window().maximize();
 
         driver.get("https://dev-octopos-app.onpoint.vn/");
@@ -23,9 +20,8 @@ public class Test {
         WebElement authBox = driver.findElement(By.className("AuthBoxRow--name"));
         authBox.click();
 
-        WebElement msEmail = driver.findElement(By.xpath("//input[@type='email']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated((By) msEmail));
-        msEmail.sendKeys("khoa.le@onpoint.vn");
+        WebElement msEmailEle = driver.findElement(By.xpath("(//input[@id='i0116'])[1]"));
+        msEmailEle.sendKeys("khoa.le@onpoint.vn");
 
         WebElement nextBtn = driver.findElement(By.cssSelector("*[@type='submit']"));
         nextBtn.click();
