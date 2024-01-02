@@ -4,7 +4,7 @@ import static com.lkhoaa.testCases.RMS.CalculateShopeeFee.compareSPFee;
 
 public class CompareOneFileShopee {
     public static void main(String[] args) {
-        String fileName = "thm";
+        String fileName = "pep";
         String fileFullName = fileName + ".xlsx";
         compareSPFee(fileFullName);
     }

@@ -18,9 +18,13 @@ public class OpolloSPRevenue {
             int amountColumnIndex = 18;
 
             for (Row row : sheet) {
-                Cell cell = row.getCell(amountColumnIndex);
-                if (cell != null && cell.getCellType() == CellType.NUMERIC) {
-                    totalSum += cell.getNumericCellValue();
+                Cell completedCell = row.getCell(24);
+                String completedCellStr = completedCell.getStringCellValue();
+                if (completedCellStr != null && completedCellStr.equals("completed")){
+                    Cell cell = row.getCell(amountColumnIndex);
+                    if (cell != null && cell.getCellType() == CellType.NUMERIC) {
+                        totalSum += cell.getNumericCellValue();
+                    }
                 }
             }
 
