@@ -17,7 +17,7 @@ public class ShopeeDiscountFee {
                 if (workbook.getSheetName(i).startsWith("Income")) {
                     Sheet incomeSheet = workbook.getSheetAt(i);
                     for (Row row : incomeSheet) {
-                        Cell cell = row.getCell(10);
+                        Cell cell = row.getCell(10); //K
                         if (cell != null && cell.getCellType() == CellType.NUMERIC) {
                             totalSum += cell.getNumericCellValue();
                         }

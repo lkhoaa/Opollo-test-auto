@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.lkhoaa.testCases.RMS.CalculateShopeeFee.compareSPFee;
+import static com.lkhoaa.model.RMS.FormulaCompare.CalculateShopeeFee.compareSPFee;
 
 public class CompareAllFileShopee {
     public static void main(String[] args) {
-        String folderPath = System.getProperty("user.dir") + "/Opollo/src/test/data/Shopee/";
+        String folderPath = System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/";
 
         File folder = new File(folderPath);
         File[] files = folder.listFiles();

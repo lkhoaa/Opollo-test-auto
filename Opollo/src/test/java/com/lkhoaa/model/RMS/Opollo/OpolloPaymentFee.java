@@ -13,17 +13,13 @@ public class OpolloPaymentFee {
     public static double sumOfOPPaymentFee(String filePath) {
         double totalSum = 0;
         try {
-            // Load the Excel file
             FileInputStream fis = new FileInputStream(new File(filePath));
 
-            // Create the workbook object
             Workbook workbook = StreamingReader.builder().open(fis);
 
-            // Get the first sheet of the workbook
             Sheet sheet = workbook.getSheet("Payment Fee");
 
-            // Define the column indices for fee name and amount
-            int amountColumnIndex = 11;  // Column index 7 (0-based)
+            int amountColumnIndex = 11;  //
 
             // Iterate through each row in the sheet
             for (Row row : sheet) {

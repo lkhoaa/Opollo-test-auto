@@ -15,7 +15,7 @@ public class OpolloSPShopeeDiscount {
             Sheet sheet = workbook.getSheet("Shipping Fee");
 
             for (Row row : sheet) {
-                Cell cell1 = row.getCell(21);
+                Cell cell1 = row.getCell(21); //V
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
                     totalSum += cell1.getNumericCellValue();
                 }
