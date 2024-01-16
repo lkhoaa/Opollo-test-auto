@@ -4,7 +4,7 @@ import static com.lkhoaa.model.RMS.FormulaCompare.CalculateShopeeFee.compareSPFe
 
 public class CompareOneFileShopee {
     public static void main(String[] args) {
-        String fileName = "hug";
+        String fileName = "thm";
         String fileFullName = fileName + ".xlsx";
         compareSPFee(fileFullName);
     }

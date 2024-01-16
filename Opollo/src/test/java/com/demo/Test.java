@@ -30,13 +30,5 @@ public class Test {
         msPass.sendKeys("Lekko1994");
 
         driver.close();
-
-//        String actualText = driver.findElement(By.id("element")).getText();
-//        String expectedText = "Expected Text";
-//        if(actualText.equals(expectedText)) {
-//            System.out.println("Text validation passed");
-//        } else {
-//            System.out.println("Text validation failed");
-//        }
     }
 }
