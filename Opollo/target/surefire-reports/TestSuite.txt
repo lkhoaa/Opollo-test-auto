@@ -1,17 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.968 s <<< FAILURE! - in TestSuite
-com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder[khoa.le@onpoint.vn, 1234](1)  Time elapsed: 6.356 s  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.365 s <<< FAILURE! - in TestSuite
+com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder[khoa.le@onpoint.vn, 1234](1)  Time elapsed: 7.976 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"css selector","selector":".open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label="April 30, 2023"]"}
-  (Session info: chrome=114.0.5735.133)
+  (Session info: chrome=120.0.6099.216)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Les-MacBook-Pro', ip: '2405:4802:913f:7820:ffff:ffff:ffff:fff5%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.6', java.version: '11.0.20'
+System info: host: 'Les-MacBook-Pro-2.local', ip: 'fe80:0:0:0:1006:3184:32b9:2b25%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, goog:chromeOptions: {debuggerAddress: localhost:49185}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5a12a6cd42c8b8f649eb61c406a9d80d
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9867f79b86a7c60cbbdad3ff33273019
 *** Element info: {Using=css selector, value=.open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label="April 30, 2023"]}
 	at com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:28)
 

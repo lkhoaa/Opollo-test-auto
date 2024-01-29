@@ -58,15 +58,6 @@ public class CalculateShopeeFee {
         System.out.println("=====================================");
     }
 
-    public static void compareSum(double sum1, double sum2) {
-        double tolerance = 0.0001;
-        if (Math.abs(sum1 - sum2) < tolerance) {
-            System.out.println("The values are equal.");
-        } else {
-            System.out.println("The values are not equal.");
-        }
-    }
-
     public static void compareAllFee() {
         double tolerance = 0.0001;
         System.out.println(abs(SPRevenue - OPRevenue));

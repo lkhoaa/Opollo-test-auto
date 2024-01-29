@@ -1,0 +1,73 @@
+package com.lkhoaa.model.RMS.FormulaCompare;
+
+import java.io.File;
+
+import static com.lkhoaa.model.RMS.Opollo.OpolloAffCommissionFee.sumOfOPAffCommissionFee;
+import static com.lkhoaa.model.RMS.Opollo.OpolloCommissionFee.sumOfOPCommissionFee;
+import static com.lkhoaa.model.RMS.Opollo.OpolloPaymentFee.sumOfOPPaymentFee;
+import static com.lkhoaa.model.RMS.Opollo.OpolloRevenueTTK.sumOfOPRevenue;
+import static com.lkhoaa.model.RMS.Opollo.OpolloSFPServiceFee.sumOfOPSFPServiceFee;
+import static com.lkhoaa.model.RMS.Opollo.OpolloTTKShippingFee.sumOfOPShippingFee;
+import static com.lkhoaa.model.RMS.Tiktok.TTKAffCommissionFee.sumOfTTKAffCommissionFee;
+import static com.lkhoaa.model.RMS.Tiktok.TTKCommissionFee.sumOfTTKCommissionFee;
+import static com.lkhoaa.model.RMS.Tiktok.TTKPaymentFee.sumOfTTKPaymentFee;
+import static com.lkhoaa.model.RMS.Tiktok.TTKRevenue.sumOfTTKRevenue;
+import static com.lkhoaa.model.RMS.Tiktok.TTKSFPServiceFee.sumOfTTKSFPServiceFee;
+import static com.lkhoaa.model.RMS.Tiktok.TTKShippingFee.sumOfTTKShippingFee;
+import static java.lang.Math.abs;
+
+public class CalculateTTKFee {
+    private static double commissionTTKFee;
+    private static double commissionOPFee;
+    private static double paymentTTKFee;
+    private static double paymentOPFee;
+    private static double shippingTTKFee;
+    private static double shippingOPFee;
+    private static double SFPServiceTTKFee;
+    private static double SFPServiceOPFee;
+    private static double affCommissionTTKFee;
+    private static double affCommissionOPFee;
+    private static double revenueTTK;
+    private static double revenueOP;
+
+    public static void compareTTKFee(String fileName) {
+        String excellFileName = fileName;
+        System.out.println("TTK" + excellFileName.toUpperCase());
+
+        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Tiktok/" + excellFileName);
+        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName);
+
+        commissionTTKFee = sumOfTTKCommissionFee(String.valueOf(filePath1));
+        commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
+
+        paymentTTKFee = sumOfTTKPaymentFee(String.valueOf(filePath1));
+        paymentOPFee = sumOfOPPaymentFee(String.valueOf(filePath2));
+
+        shippingTTKFee = sumOfTTKShippingFee(String.valueOf(filePath1));
+        shippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
+
+        affCommissionTTKFee = sumOfTTKAffCommissionFee(String.valueOf(filePath1));
+        affCommissionOPFee = sumOfOPAffCommissionFee(String.valueOf(filePath2));
+
+        SFPServiceTTKFee = sumOfTTKSFPServiceFee(String.valueOf(filePath1));
+        SFPServiceOPFee = sumOfOPSFPServiceFee(String.valueOf(filePath2));
+
+        revenueTTK = sumOfTTKRevenue(String.valueOf(filePath1));
+        revenueOP = sumOfOPRevenue(String.valueOf(filePath2));
+        compareAllFee();
+        System.out.println("=====================================");
+    }
+
+    public static void compareAllFee() {
+        if ((abs(commissionTTKFee - commissionOPFee)
+                - abs(paymentTTKFee - paymentOPFee)
+                - abs(shippingTTKFee - shippingOPFee)
+                - abs(affCommissionTTKFee - affCommissionOPFee)
+                - abs(SFPServiceTTKFee - SFPServiceOPFee)
+                - abs(revenueTTK - revenueOP)) == 0) {
+            System.out.println("===> OK");
+        } else {
+            System.out.println("===> The values are not equal.");
+        }
+    }
+}
