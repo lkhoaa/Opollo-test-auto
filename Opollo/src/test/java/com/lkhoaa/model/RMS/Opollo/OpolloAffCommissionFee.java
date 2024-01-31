@@ -25,7 +25,7 @@ public class OpolloAffCommissionFee {
             }
 
             System.out.printf("Total sum of Aff Commission fee on OP: ");
-            System.out.printf("%.2f\n", abs(totalSum));
+            System.out.printf("%.2f\n", totalSum);
 
             workbook.close();
             fis.close();

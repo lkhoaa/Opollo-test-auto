@@ -23,7 +23,7 @@ public class OpolloSellerVoucherFee {
             Sheet sheet = workbook.getSheet("Seller Voucher");
 
             // Define the column indices for fee name and amount
-            int amountColumnIndex = 9;  // Column index 7 (0-based)
+            int amountColumnIndex = 10;  // Column index 7 (0-based)
 
             // Iterate through each row in the sheet
             for (Row row : sheet) {

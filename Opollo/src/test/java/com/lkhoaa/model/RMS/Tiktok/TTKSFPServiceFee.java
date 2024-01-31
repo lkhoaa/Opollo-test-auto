@@ -26,12 +26,12 @@ public class TTKSFPServiceFee {
                         totalSum += numericValue;
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println("Cannot parse the string to a number in row " + (row.getRowNum() + 1));
+                    System.err.print("");
                 }
             }
 
             System.out.printf("Total sum of SFP Service fee on TTK: ");
-            System.out.printf("%.2f\n", abs(totalSum));
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

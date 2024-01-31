@@ -21,26 +21,34 @@ public class TTKShippingFee {
             Sheet orderSheet = workbook.getSheetAt(0);
             for (Row row : orderSheet) {
                 try {
-                    Cell cell1 = row.getCell(16); //Q
-                    if (cell1 != null && cell1.getCellType() == CellType.STRING) {
-                        java.lang.String cellValue = cell1.getStringCellValue();
+//                    Cell cell1 = row.getCell(16); //Q
+//                    if (cell1 != null && cell1.getCellType() == CellType.STRING) {
+//                        java.lang.String cellValue = cell1.getStringCellValue();
+//                        double numericValue = Double.parseDouble(cellValue);
+//                        Sum1 += numericValue;
+//                    }
+//
+//                    Cell cell2 = row.getCell(17); //R
+//                    if (cell2 != null && cell2.getCellType() == CellType.STRING) {
+//                        java.lang.String cellValue = cell2.getStringCellValue();
+//                        double numericValue = Double.parseDouble(cellValue);
+//                        Sum2 += numericValue;
+//                    }
+
+                    Cell cell = row.getCell(15); //P
+                    if (cell != null && cell.getCellType() == CellType.STRING) {
+                        java.lang.String cellValue = cell.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
-                        Sum1 += numericValue;
-                    }
-                    
-                    Cell cell2 = row.getCell(17); //R
-                    if (cell2 != null && cell2.getCellType() == CellType.STRING) {
-                        java.lang.String cellValue = cell2.getStringCellValue();
-                        double numericValue = Double.parseDouble(cellValue);
-                        Sum2 += numericValue;
+                        totalSum += numericValue;
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println("Cannot parse the string to a number in row " + (row.getRowNum() + 1));
+                    System.err.print("");
                 }
             }
 
             System.out.printf("Total sum of Shipping fee on TTK: ");
-            System.out.printf("%.2f\n", abs(totalSum = Sum1 + Sum2));
+//            System.out.printf("%.2f\n", totalSum = Sum1 + Sum2);
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

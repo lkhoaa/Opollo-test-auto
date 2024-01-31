@@ -19,19 +19,19 @@ public class TTKPaymentFee {
             Sheet orderSheet = workbook.getSheetAt(0);
             for (Row row : orderSheet) {
                 try {
-                    Cell cell = row.getCell(14);
+                    Cell cell = row.getCell(14); //O
                     if (cell != null && cell.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
                         totalSum += numericValue;
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println("Cannot parse the string to a number in row " + (row.getRowNum() + 1));
+                    System.err.print("");
                 }
             }
 
             System.out.printf("Total sum of Payment fee on TTK: ");
-            System.out.printf("%.2f\n", abs(totalSum));
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

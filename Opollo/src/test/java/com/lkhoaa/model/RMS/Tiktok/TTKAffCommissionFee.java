@@ -35,12 +35,12 @@ public class TTKAffCommissionFee {
                         Sum2 += numericValue;
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println("Cannot parse the string to a number in row " + (row.getRowNum() + 1));
+                    System.err.print("");
                 }
             }
 
             System.out.printf("Total sum of Aff Commission fee on TTK: ");
-            System.out.printf("%.2f\n", abs(totalSum = Sum2 + Sum1));
+            System.out.printf("%.2f\n", totalSum = Sum2 + Sum1);
             workbook.close();
             fis.close();
         } catch (IOException e) {
