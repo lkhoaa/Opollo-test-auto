@@ -59,15 +59,46 @@ public class CalculateTTKFee {
     }
 
     public static void compareAllFee() {
-        if ((abs(commissionTTKFee - commissionOPFee)
-                - abs(paymentTTKFee - paymentOPFee)
-                - abs(shippingTTKFee - shippingOPFee)
-                - abs(affCommissionTTKFee - affCommissionOPFee)
-                - abs(SFPServiceTTKFee - SFPServiceOPFee)
-                - abs(revenueTTK - revenueOP)) == 0) {
+        double tolerance = 0.0001;
+        double differenceCommission = abs(commissionTTKFee - commissionOPFee);
+        double differencePayment = abs(paymentTTKFee - paymentOPFee);
+        double differenceShipping = abs(shippingTTKFee - shippingOPFee);
+        double differenceAffCommission = abs(affCommissionTTKFee - affCommissionOPFee);
+        double differenceSFPService = abs(SFPServiceTTKFee - SFPServiceOPFee);
+        double differenceRevenue = abs(revenueTTK - revenueOP);
+        if ((abs(differenceCommission
+                - differencePayment
+                - differenceShipping
+                - differenceAffCommission
+                - differenceSFPService
+                - differenceRevenue)) < tolerance) {
             System.out.println("===> OK");
         } else {
             System.out.println("===> The values are not equal.");
+            if (differenceCommission > tolerance) {
+                System.out.printf("Difference in Commission Fee: ");
+                System.out.printf("%.2f\n", differenceCommission);
+            }
+            if (differencePayment > tolerance) {
+                System.out.printf("Difference in Payment Fee: ");
+                System.out.printf("%.2f\n", differencePayment);
+            }
+            if (differenceShipping > tolerance) {
+                System.out.printf("Difference in Shipping Fee: ");
+                System.out.printf("%.2f\n", differenceShipping);
+            }
+            if (differenceAffCommission > tolerance) {
+                System.out.printf("Difference in Affiliate Commission Fee: ");
+                System.out.printf("%.2f\n", differenceAffCommission);
+            }
+            if (differenceSFPService > tolerance) {
+                System.out.printf("Difference in SFP Service Fee: ");
+                System.out.printf("%.2f\n", differenceSFPService);
+            }
+            if (differenceRevenue > tolerance) {
+                System.out.printf("Difference in Revenue: ");
+                System.out.printf("%.2f\n", differenceRevenue);
+            }
         }
     }
 }

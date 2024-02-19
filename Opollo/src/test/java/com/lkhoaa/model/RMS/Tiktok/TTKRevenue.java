@@ -28,7 +28,7 @@ public class TTKRevenue {
                         Sum1 += numericValue;
                     }
 
-                    Cell cell2 = row.getCell(11); //L
+                    Cell cell2 = row.getCell(9); //J
                     if (cell2 != null && cell2.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell2.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
