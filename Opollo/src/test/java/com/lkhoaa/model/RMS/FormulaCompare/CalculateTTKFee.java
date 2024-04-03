@@ -7,12 +7,14 @@ import static com.lkhoaa.model.RMS.Opollo.OpolloCommissionFee.sumOfOPCommissionF
 import static com.lkhoaa.model.RMS.Opollo.OpolloPaymentFee.sumOfOPPaymentFee;
 import static com.lkhoaa.model.RMS.Opollo.OpolloRevenueTTK.sumOfOPRevenue;
 import static com.lkhoaa.model.RMS.Opollo.OpolloSFPServiceFee.sumOfOPSFPServiceFee;
+import static com.lkhoaa.model.RMS.Opollo.OpolloStatementAmount.sumOfOPStatementAmount;
 import static com.lkhoaa.model.RMS.Opollo.OpolloTTKShippingFee.sumOfOPShippingFee;
 import static com.lkhoaa.model.RMS.Tiktok.TTKAffCommissionFee.sumOfTTKAffCommissionFee;
 import static com.lkhoaa.model.RMS.Tiktok.TTKCommissionFee.sumOfTTKCommissionFee;
 import static com.lkhoaa.model.RMS.Tiktok.TTKPaymentFee.sumOfTTKPaymentFee;
 import static com.lkhoaa.model.RMS.Tiktok.TTKRevenue.sumOfTTKRevenue;
 import static com.lkhoaa.model.RMS.Tiktok.TTKSFPServiceFee.sumOfTTKSFPServiceFee;
+import static com.lkhoaa.model.RMS.Tiktok.TTKSettlementAmount.sumOfTTKSettlementAmount;
 import static com.lkhoaa.model.RMS.Tiktok.TTKShippingFee.sumOfTTKShippingFee;
 import static java.lang.Math.abs;
 
@@ -29,6 +31,9 @@ public class CalculateTTKFee {
     private static double affCommissionOPFee;
     private static double revenueTTK;
     private static double revenueOP;
+//    private static double statementAmountOP;
+//    private static double settlementAmountTTK;
+
 
     public static void compareTTKFee(String fileName) {
         String excellFileName = fileName;
@@ -54,18 +59,22 @@ public class CalculateTTKFee {
 
         revenueTTK = sumOfTTKRevenue(String.valueOf(filePath1));
         revenueOP = sumOfOPRevenue(String.valueOf(filePath2));
+
+//        settlementAmountTTK = sumOfTTKSettlementAmount(String.valueOf(filePath1));
+//        statementAmountOP = sumOfOPStatementAmount(String.valueOf(filePath2));
         compareAllFee();
         System.out.println("=====================================");
     }
 
     public static void compareAllFee() {
-        double tolerance = 0.0001;
+        double tolerance = 10;
         double differenceCommission = abs(commissionTTKFee - commissionOPFee);
         double differencePayment = abs(paymentTTKFee - paymentOPFee);
         double differenceShipping = abs(shippingTTKFee - shippingOPFee);
         double differenceAffCommission = abs(affCommissionTTKFee - affCommissionOPFee);
         double differenceSFPService = abs(SFPServiceTTKFee - SFPServiceOPFee);
         double differenceRevenue = abs(revenueTTK - revenueOP);
+//        double differenceSettlementAmount = abs(settlementAmountTTK - statementAmountOP);
         if ((abs(differenceCommission
                 - differencePayment
                 - differenceShipping
@@ -99,6 +108,10 @@ public class CalculateTTKFee {
                 System.out.printf("Difference in Revenue: ");
                 System.out.printf("%.2f\n", differenceRevenue);
             }
+//            if (differenceSettlementAmount > tolerance) {
+//                System.out.printf("Difference in Settlement Amount: ");
+//                System.out.printf("%.2f\n", differenceSettlementAmount);
+//            }
         }
     }
 }

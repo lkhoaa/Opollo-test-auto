@@ -24,9 +24,6 @@ public class OpolloSFPServiceFee {
                 }
             }
 
-            System.out.printf("Total sum of SFP Service fee on OP: ");
-            System.out.printf("%.2f\n", totalSum);
-
             workbook.close();
             fis.close();
         } catch (IOException e) {

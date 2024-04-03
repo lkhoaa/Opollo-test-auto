@@ -28,8 +28,8 @@ public class OPRevenueReturned {
             Sheet sheet = workbook.getSheet("Sale Out");
 
             // Define the column indices for fee name and amount
-            int transactionTypeColumnIndex = 23;
-            int pisColumnIndex = 26;
+            int transactionTypeColumnIndex = 25;
+            int pisColumnIndex = 28;
             int amountColumnIndex = 18;
 
             // Iterate through each row in the sheet

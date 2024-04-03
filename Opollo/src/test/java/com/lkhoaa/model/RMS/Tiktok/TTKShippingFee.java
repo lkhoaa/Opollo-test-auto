@@ -45,10 +45,8 @@ public class TTKShippingFee {
                     System.err.print("");
                 }
             }
-
-            System.out.printf("Total sum of Shipping fee on TTK: ");
-//            System.out.printf("%.2f\n", totalSum = Sum1 + Sum2);
-            System.out.printf("%.2f\n", totalSum);
+//            System.out.printf("Total sum of Shipping fee on TTK: ");
+//            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

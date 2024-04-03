@@ -27,10 +27,8 @@ public class OpolloCommissionFee {
                 }
             }
 
-            System.out.printf("Total sum of Commission fee on OP: ");
-            System.out.printf("%.2f\n", totalSum);
-
-            // Close the workbook and file streams
+//            System.out.printf("Total sum of Commission fee on OP: ");
+//            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

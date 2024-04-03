@@ -28,8 +28,8 @@ public class LZDPromotionalChargesFlexiCombo {
             Sheet sheet = workbook.getSheetAt(0);
 
             // Define the column indices for fee name and amount
-            int feeNameIndex = 2;
-            int amountColumnIndex = 7;
+            int feeNameIndex = 3;
+            int amountColumnIndex = 4;
 
             // Iterate through each row in the sheet
             for (Row row : sheet) {

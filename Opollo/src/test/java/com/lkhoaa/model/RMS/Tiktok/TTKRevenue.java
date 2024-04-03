@@ -12,8 +12,6 @@ import static org.apache.commons.math3.util.FastMath.abs;
 public class TTKRevenue {
     public static double sumOfTTKRevenue(String filePath) {
         double totalSum = 0;
-        double Sum1 = 0;
-        double Sum2 = 0;
         try {
             FileInputStream fis = new FileInputStream(new File(filePath));
             Workbook workbook = StreamingReader.builder().open(fis);
@@ -21,26 +19,17 @@ public class TTKRevenue {
             Sheet orderSheet = workbook.getSheetAt(0);
             for (Row row : orderSheet) {
                 try {
-                    Cell cell1 = row.getCell(8); //I
-                    if (cell1 != null && cell1.getCellType() == CellType.STRING) {
-                        java.lang.String cellValue = cell1.getStringCellValue();
+                    Cell cell = row.getCell(6); //G
+                    if (cell != null && cell.getCellType() == CellType.STRING) {
+                        java.lang.String cellValue = cell.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
-                        Sum1 += numericValue;
-                    }
-
-                    Cell cell2 = row.getCell(9); //J
-                    if (cell2 != null && cell2.getCellType() == CellType.STRING) {
-                        java.lang.String cellValue = cell2.getStringCellValue();
-                        double numericValue = Double.parseDouble(cellValue);
-                        Sum2 += numericValue;
+                        totalSum += numericValue;
                     }
                 } catch (NumberFormatException e) {
                     System.err.print("");
                 }
             }
 
-            System.out.printf("Total sum of Revenue on TTK: ");
-            System.out.printf("%.2f\n", totalSum = Sum1 + Sum2);
             workbook.close();
             fis.close();
         } catch (IOException e) {

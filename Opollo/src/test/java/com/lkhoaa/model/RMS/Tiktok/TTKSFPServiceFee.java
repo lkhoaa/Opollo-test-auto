@@ -19,7 +19,7 @@ public class TTKSFPServiceFee {
             Sheet orderSheet = workbook.getSheetAt(0);
             for (Row row : orderSheet) {
                 try {
-                    Cell cell = row.getCell(25); //Z
+                    Cell cell = row.getCell(27); //AB
                     if (cell != null && cell.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
@@ -30,8 +30,6 @@ public class TTKSFPServiceFee {
                 }
             }
 
-            System.out.printf("Total sum of SFP Service fee on TTK: ");
-            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

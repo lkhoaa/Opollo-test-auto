@@ -26,8 +26,8 @@ public class LZDRevenueReturned {
             Sheet sheet = workbook.getSheetAt(0);
 
             // Define the column indices for fee name and amount
-            int feeNameIndex = 2;
-            int amountColumnIndex = 7;
+            int feeNameIndex = 3;
+            int amountColumnIndex = 4;
 
             // Iterate through each row in the sheet to sum Item Price Credit
             for (Row row : sheet) {

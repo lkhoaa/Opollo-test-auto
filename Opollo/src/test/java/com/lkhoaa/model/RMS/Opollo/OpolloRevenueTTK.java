@@ -18,14 +18,11 @@ public class OpolloRevenueTTK {
             Sheet sheet = workbook.getSheet("Sale Out");
 
             for (Row row : sheet) {
-                Cell cell1 = row.getCell(18); //S
+                Cell cell1 = row.getCell(19); //S
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
                     totalSum += cell1.getNumericCellValue();
                 }
             }
-
-            System.out.printf("Total sum of Revenue on OP: ");
-            System.out.printf("%.2f\n", abs(totalSum));
 
             workbook.close();
             fis.close();

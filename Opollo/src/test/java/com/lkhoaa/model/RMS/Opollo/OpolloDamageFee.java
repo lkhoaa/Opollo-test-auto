@@ -23,7 +23,7 @@ public class OpolloDamageFee {
             Sheet sheet = workbook.getSheet("Damage Claims");
 
             // Define the column indices for fee name and amount
-            int amountColumnIndex = 6;  // Column index 6 (0-based)
+            int amountColumnIndex = 7;  // Column index 6 (0-based)
 
             // Iterate through each row in the sheet
             for (Row row : sheet) {

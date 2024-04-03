@@ -30,8 +30,6 @@ public class TTKCommissionFee {
                 }
             }
 
-            System.out.printf("Total sum of Commission fee on TTK: ");
-            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {
