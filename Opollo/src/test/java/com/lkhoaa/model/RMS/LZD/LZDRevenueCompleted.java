@@ -25,7 +25,7 @@ public class LZDRevenueCompleted {
             for (Row row : sheet) {
                 Cell feeCell = row.getCell(feeNameIndex);
                 String feeStr = feeCell.getStringCellValue();
-                if (feeStr != null && (feeStr.equals("Item Price Credit") || feeStr.equals("LazFlash Extra/Everyday Below $9.99 Subsidy"))) {
+                if (feeStr != null && (feeStr.equals("Item Price Credit") || feeStr.equals("Lazsubsidy/Everyday 49k & below subsidy"))) {
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
                     if (amountCell != null) {

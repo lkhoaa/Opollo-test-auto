@@ -21,17 +21,20 @@ public class OpolloSPShippingFee {
             for (Row row : sheet) {
                 Cell cell1 = row.getCell(16);
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
-                    totalSum1 += cell1.getNumericCellValue();
+                    double amountCell = cell1.getNumericCellValue();
+                    totalSum1 += 0-amountCell;
                 }
 
                 Cell cell2 = row.getCell(17);
                 if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
-                    totalSum2 += cell2.getNumericCellValue();
+                    double amountCell = cell2.getNumericCellValue();
+                    totalSum2 += 0-amountCell;
                 }
 
                 Cell cell3 = row.getCell(18);
                 if (cell3 != null && cell3.getCellType() == CellType.NUMERIC) {
-                    totalSum3 += cell3.getNumericCellValue();
+                    double amountCell = cell3.getNumericCellValue();
+                    totalSum3 += 0-amountCell;
                 }
             }
 

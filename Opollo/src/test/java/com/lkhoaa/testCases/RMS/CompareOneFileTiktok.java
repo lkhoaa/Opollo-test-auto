@@ -4,7 +4,7 @@ import static com.lkhoaa.model.RMS.FormulaCompare.CalculateTTKFee.compareTTKFee;
 
 public class CompareOneFileTiktok {
     public static void main(String[] args) {
-        String fileName = "frs";
+        String fileName = "euc";
         String fileFullName = fileName + ".xlsx";
         compareTTKFee(fileFullName);
     }

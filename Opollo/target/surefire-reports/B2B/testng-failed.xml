@@ -8,7 +8,6 @@
           <include name="initWebdriverObject"/>
           <include name="createB2BOrder" invocation-numbers="0"/>
           <include name="afterMethod"/>
-          <include name="afterMethod"/>
         </methods>
       </class> <!-- com.lkhoaa.testCases.B2B.CreateB2BOrder -->
     </classes>

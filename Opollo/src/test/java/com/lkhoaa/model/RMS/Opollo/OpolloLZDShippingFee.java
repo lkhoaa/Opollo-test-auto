@@ -29,47 +29,56 @@ public class OpolloLZDShippingFee {
             for (Row row : sheet) {
                 Cell cell1 = row.getCell(6);
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
-                    totalSum1 += cell1.getNumericCellValue();
+                    double amountCell = cell1.getNumericCellValue();
+                    totalSum1 += 0-amountCell;
                 }
 
                 Cell cell2 = row.getCell(7);
                 if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
-                    totalSum2 += cell2.getNumericCellValue();
+                    double amountCell = cell2.getNumericCellValue();
+                    totalSum2 += 0-amountCell;
                 }
 
                 Cell cell3 = row.getCell(8);
                 if (cell3 != null && cell3.getCellType() == CellType.NUMERIC) {
-                    totalSum3 += cell3.getNumericCellValue();
+                    double amountCell = cell3.getNumericCellValue();
+                    totalSum3 += 0-amountCell;
                 }
 
                 Cell cell4 = row.getCell(9);
                 if (cell4 != null && cell4.getCellType() == CellType.NUMERIC) {
-                    totalSum4 += cell4.getNumericCellValue();
+                    double amountCell = cell4.getNumericCellValue();
+                    totalSum4 += 0-amountCell;
                 }
 
                 Cell cell5 = row.getCell(10);
                 if (cell5 != null && cell5.getCellType() == CellType.NUMERIC) {
-                    totalSum5 += cell5.getNumericCellValue();
+                    double amountCell = cell5.getNumericCellValue();
+                    totalSum5 += 0-amountCell;
                 }
 
                 Cell cell6 = row.getCell(11);
                 if (cell6 != null && cell6.getCellType() == CellType.NUMERIC) {
-                    totalSum6 += cell6.getNumericCellValue();
+                    double amountCell = cell6.getNumericCellValue();
+                    totalSum6 += 0-amountCell;
                 }
 
                 Cell cell7 = row.getCell(12);
                 if (cell7 != null && cell7.getCellType() == CellType.NUMERIC) {
-                    totalSum7 += cell7.getNumericCellValue();
+                    double amountCell = cell7.getNumericCellValue();
+                    totalSum7 += 0-amountCell;
                 }
 
                 Cell cell8 = row.getCell(13);
                 if (cell8 != null && cell8.getCellType() == CellType.NUMERIC) {
-                    totalSum8 += cell8.getNumericCellValue();
+                    double amountCell = cell8.getNumericCellValue();
+                    totalSum8 += 0-amountCell;
                 }
 
                 Cell cell9 = row.getCell(14);
                 if (cell9 != null && cell9.getCellType() == CellType.NUMERIC) {
-                    totalSum9 += cell9.getNumericCellValue();
+                    double amountCell = cell9.getNumericCellValue();
+                    totalSum9 += 0-amountCell;
                 }
             }
 

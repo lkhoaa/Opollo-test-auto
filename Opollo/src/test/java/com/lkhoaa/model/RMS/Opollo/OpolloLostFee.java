@@ -16,7 +16,7 @@ public class OpolloLostFee {
             FileInputStream fis = new FileInputStream(new File(filePath));
             Workbook workbook = StreamingReader.builder().open(fis);
             Sheet sheet = workbook.getSheet("Lost Claims");
-            int amountColumnIndex = 6;  // Column index 6 (0-based)
+            int amountColumnIndex = 7;  //H
 
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);
@@ -25,11 +25,9 @@ public class OpolloLostFee {
                 }
             }
 
-            // Print the total sum of commission amounts
             System.out.printf("Total sum of Lost Claim amounts on OP: ");
             System.out.printf("%.2f\n", totalSum);
 
-            // Close the workbook and file streams
             workbook.close();
             fis.close();
         } catch (IOException e) {

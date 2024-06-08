@@ -23,12 +23,13 @@ public class OpolloCommissionFee {
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);
                 if (cell != null && cell.getCellType() == CellType.NUMERIC) {
-                    totalSum += cell.getNumericCellValue();
+                    double amountCell = cell.getNumericCellValue();
+                    totalSum += 0-amountCell;
                 }
             }
 
-//            System.out.printf("Total sum of Commission fee on OP: ");
-//            System.out.printf("%.2f\n", totalSum);
+            System.out.printf("Total sum of Commission fee on OP: ");
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

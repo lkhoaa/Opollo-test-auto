@@ -5,6 +5,8 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
@@ -12,9 +14,11 @@ public class LoginPage {
     private final By usernameSelector = By.cssSelector("[name='email']");
     private final By passwordSelector = By.cssSelector("[name='password']");
     private final By loginBtnSelector = By.cssSelector("[type='submit']");
+    private final WebDriverWait wait;
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
+        wait = new WebDriverWait(driver,10);
     }
 
     public WebElement loginBtn() {
@@ -35,6 +39,7 @@ public class LoginPage {
     }
     @Step("Click on login button")
     public void clickOnLoginBtn(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(loginBtnSelector));
         loginBtn().click();
     }
 }

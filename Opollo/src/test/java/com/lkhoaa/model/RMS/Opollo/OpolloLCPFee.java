@@ -31,7 +31,8 @@ public class OpolloLCPFee {
                 Cell cell = row.getCell(amountColumnIndex);
                 if (cell != null && cell.getCellType() == CellType.NUMERIC) {
                     // Add the numeric value to the total sum
-                    totalSum += cell.getNumericCellValue();
+                    double amountCell = cell.getNumericCellValue();
+                    totalSum += 0-amountCell;
                 }
             }
 

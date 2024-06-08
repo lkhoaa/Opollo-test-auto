@@ -13,25 +13,17 @@ public class OpolloSellerVoucherFee {
     public static double sumOfOPSellerVoucherFee(String filePath) {
         double totalSum = 0;
         try {
-            // Load the Excel file
             FileInputStream fis = new FileInputStream(new File(filePath));
-
-            // Create the workbook object
             Workbook workbook = StreamingReader.builder().open(fis);
-
-            // Get the first sheet of the workbook
             Sheet sheet = workbook.getSheet("Seller Voucher");
 
-            // Define the column indices for fee name and amount
             int amountColumnIndex = 10;  // Column index 7 (0-based)
 
-            // Iterate through each row in the sheet
             for (Row row : sheet) {
-                // Get the fee name from the specified column
                 Cell cell = row.getCell(amountColumnIndex);
                 if (cell != null && cell.getCellType() == CellType.NUMERIC) {
-                    // Add the numeric value to the total sum
-                    totalSum += cell.getNumericCellValue();
+                    double amountCell = cell.getNumericCellValue();
+                    totalSum += 0-amountCell;
                 }
             }
 

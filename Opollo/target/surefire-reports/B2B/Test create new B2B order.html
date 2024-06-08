@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jan 17 10:22:06 ICT 2024</td>
+<td>Started on:</td><td>Thu Apr 11 11:20:20 ICT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>8 seconds (8758 ms)</td>
+<tr><td>Total time:</td><td>4 seconds (4262 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,15 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder()'><b>createB2BOrder</b><br>Test class: com.lkhoaa.testCases.B2B.CreateB2BOrder<br>Test method: Create new B2B order<br>Parameters: khoa.le@onpoint.vn, 1234</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.open &gt; .flatpickr-innerContainer &gt; .flatpickr-rContainer &gt; .flatpickr-days &gt; .dayContainer &gt; [aria-label=&quot;April 30, 2023&quot;]&quot;}
-  (Session info: chrome=120.0.6099.216)
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#react\-select\-2\-input&quot;}
+  (Session info: chrome=123.0.6312.124)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Les-MacBook-Pro-2.local&apos;, ip: &apos;fe80:0:0:0:1006:3184:32b9:2b25%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;11.0.20&apos;
+System info: host: &apos;Les-MacBook-Pro-2.local&apos;, ip: &apos;fe80:0:0:0:c4b:5ed2:669a:5823%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;11.0.20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9867f79b86a7c60cbbdad3ff33273019
-*** Element info: {Using=css selector, value=.open &gt; .flatpickr-innerContainer &gt; .flatpickr-rContainer &gt; .flatpickr-days &gt; .dayContainer &gt; [aria-label=&quot;April 30, 2023&quot;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.124, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50025}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e47654d0734e8f800cd90156dc78bb17
+*** Element info: {Using=id, value=react-select-2-input}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -92,22 +92,22 @@ Session ID: 9867f79b86a7c60cbbdad3ff33273019
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.lkhoaa.model.B2BPages.NewB2BPage.selectOrderDate(NewB2BPage.java:32)
-	at com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:28)
+	at com.lkhoaa.model.B2BPages.NewB2BPage.selectType(NewB2BPage.java:24)
+	at com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:27)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace148631794", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace148631794'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.open &gt; .flatpickr-innerContainer &gt; .flatpickr-rContainer &gt; .flatpickr-days &gt; .dayContainer &gt; [aria-label=&quot;April 30, 2023&quot;]&quot;}
-  (Session info: chrome=120.0.6099.216)
+... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2066710866", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2066710866'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#react\-select\-2\-input&quot;}
+  (Session info: chrome=123.0.6312.124)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Les-MacBook-Pro-2.local&apos;, ip: &apos;fe80:0:0:0:1006:3184:32b9:2b25%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;11.0.20&apos;
+System info: host: &apos;Les-MacBook-Pro-2.local&apos;, ip: &apos;fe80:0:0:0:c4b:5ed2:669a:5823%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.2.1&apos;, java.version: &apos;11.0.20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.216, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61294}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9867f79b86a7c60cbbdad3ff33273019
-*** Element info: {Using=css selector, value=.open &gt; .flatpickr-innerContainer &gt; .flatpickr-rContainer &gt; .flatpickr-days &gt; .dayContainer &gt; [aria-label=&quot;April 30, 2023&quot;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.124, chrome: {chromedriverVersion: 123.0.6312.122 (31f8248cdd9..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50025}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e47654d0734e8f800cd90156dc78bb17
+*** Element info: {Using=id, value=react-select-2-input}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -119,11 +119,11 @@ Session ID: 9867f79b86a7c60cbbdad3ff33273019
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
-	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.lkhoaa.model.B2BPages.NewB2BPage.selectOrderDate(NewB2BPage.java:32)
-	at com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:28)
+	at com.lkhoaa.model.B2BPages.NewB2BPage.selectType(NewB2BPage.java:24)
+	at com.lkhoaa.testCases.B2B.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -157,8 +157,8 @@ Session ID: 9867f79b86a7c60cbbdad3ff33273019
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:562)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:548)
 </pre></div></td>
-<td>7</td>
-<td>com.lkhoaa.testCases.B2B.CreateB2BOrder@290aeb20</td></tr>
+<td>3</td>
+<td>com.lkhoaa.testCases.B2B.CreateB2BOrder@49cf9028</td></tr>
 </table><p>
 </body>
 </html>
