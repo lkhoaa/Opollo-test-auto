@@ -1,1 +1,0 @@
-{"total":2,"items":[{"uid":"dffa97891d49ce942ed30f12476bb73c","name":"B2B","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"f91e0247d7c05ec493875c50fcee4044","name":"TestData Provider test","statistic":{"failed":0,"broken":2,"skipped":0,"passed":1,"unknown":0,"total":3}}]}

@@ -1,1 +1,0 @@
-{"uuid":"c11662d4-4ea7-4943-a675-46854476bc66","name":"B2B","children":["8425a929-9975-4d99-a3ae-1943e8535c1a"],"befores":[{"name":"initWebdriverObject","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1712809220155,"stop":1712809220165}],"afters":[],"links":[],"start":1712809220140,"stop":1712809224441}

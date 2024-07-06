@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"failed","Thu Apr 20 21:38:54 ICT 2023","Thu Apr 20 21:39:27 ICT 2023","33372","B2B","Test create new B2B order","com.lkhoaa.testCases.B2B.CreateB2BOrder","com.lkhoaa.testCases.B2B.CreateB2BOrder","B2B","Create new B2B order","Create successful a B2B order"
-"passed","Wed Apr 19 13:24:46 ICT 2023","Wed Apr 19 13:26:05 ICT 2023","78904","TestData Provider test","Test Data Provider","com.lkhoaa.testCases.POMS.CreateNewPO","com.lkhoaa.testCases.POMS.CreateNewPO","login","Create new PO order","Create successful a new PO order"
-"broken","Tue Apr 18 21:46:53 ICT 2023","Tue Apr 18 21:46:53 ICT 2023","3","TestData Provider test","Test Data Provider","com.lkhoaa.testCases.POMS.CreateNewPO","com.lkhoaa.testCases.POMS.CreateNewPO","login","Create new PO order","Create successful a new PO order"
-"broken","Tue Apr 18 21:49:40 ICT 2023","Tue Apr 18 21:49:40 ICT 2023","2","TestData Provider test","Test Data Provider","com.lkhoaa.testCases.POMS.CreateNewPO","com.lkhoaa.testCases.POMS.CreateNewPO","afterMethod","afterMethod",""

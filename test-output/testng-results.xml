@@ -6,12 +6,12 @@
     <groups>
     </groups>
     <test name="Command line test" duration-ms="6931" started-at="2023-07-06T21:57:56 ICT" finished-at="2023-07-06T21:58:03 ICT">
-      <class name="com.lkhoaa.testCases.RMS.CompareFeeSingleFile">
-        <test-method status="PASS" signature="testCompareExcelSums()[pri:0, instance:com.lkhoaa.testCases.RMS.CompareFeeSingleFile@36f0f1be]" name="testCompareExcelSums" duration-ms="6787" started-at="2023-07-06T21:57:56 ICT" finished-at="2023-07-06T21:58:03 ICT">
+      <class name="com.lkhoaa.testCases.rms.CompareFeeSingleFile">
+        <test-method status="PASS" signature="testCompareExcelSums()[pri:0, instance:com.lkhoaa.testCases.rms.CompareFeeSingleFile@36f0f1be]" name="testCompareExcelSums" duration-ms="6787" started-at="2023-07-06T21:57:56 ICT" finished-at="2023-07-06T21:58:03 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCompareExcelSums -->
-      </class> <!-- com.lkhoaa.testCases.RMS.CompareFeeSingleFile -->
+      </class> <!-- com.lkhoaa.testCases.rms.CompareFeeSingleFile -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

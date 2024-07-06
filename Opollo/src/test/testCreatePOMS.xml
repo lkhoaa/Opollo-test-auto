@@ -2,7 +2,7 @@
 <suite name="POMSt">
     <test name="Test create new POMS order">
         <classes>
-            <class name="com.lkhoaa.testCases.POMS.CreatePOMS"/>
+            <class name="com.lkhoaa.testCases.poms.CreatePOMS"/>
         </classes>
     </test>
 </suite>

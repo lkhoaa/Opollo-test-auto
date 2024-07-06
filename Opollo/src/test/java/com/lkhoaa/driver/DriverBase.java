@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class DriverBase {
-    private static final List<DriverFactory> webdriverThreadPool = Collections.synchronizedList(new ArrayList<DriverFactory>());
+    private static final List<DriverFactory> webdriverThreadPool = Collections.synchronizedList(new ArrayList<>());
     private static ThreadLocal<DriverFactory> driverThread;
 
     @BeforeSuite(alwaysRun = true)
