@@ -38,6 +38,6 @@ public class CreatePOMS extends DriverBase {
                 .confirmVendor()
                 .confirmModalType()
                 .clickOnConfirmbtn()
-                .getTitle();
+                .getPONumber();
     }
 }

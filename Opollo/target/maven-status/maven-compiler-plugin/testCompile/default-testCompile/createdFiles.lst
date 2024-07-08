@@ -1,3 +1,4 @@
+com/lkhoaa/utils/RetryClick.class
 com/lkhoaa/model/rms/tiktok/TTKAffCommissionFee.class
 com/lkhoaa/testCases/example/ExampleTest.class
 com/lkhoaa/model/rms/opollo/OpolloSPShippingFee.class
@@ -62,6 +63,7 @@ com/lkhoaa/model/rms/opollo/OpolloTTKShippingFee.class
 com/lkhoaa/model/rms/compareFormular/CalculateTTKFee.class
 com/lkhoaa/model/rms/tiktok/TTKPaymentFee.class
 com/lkhoaa/model/rms/lazada/LZDDamageFee.class
+com/lkhoaa/testCases/oms/CreateB2COrder.class
 com/lkhoaa/testCases/pms/SearchSKU.class
 com/lkhoaa/model/rms/opollo/OpolloDamageFee.class
 com/lkhoaa/model/rms/lazada/LZDSellerVoucherFee.class

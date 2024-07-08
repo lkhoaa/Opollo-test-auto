@@ -1,3 +1,4 @@
+/Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/testCases/oms/CreateB2COrder.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/testCases/rms/CompareOneFileShopee.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/model/rms/opollo/OpolloSPShippingFee.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/driver/DriverBase.java
@@ -32,6 +33,7 @@
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/model/rms/lazada/LZDSellerVoucherFee.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/model/rms/tiktok/TTKRevenue.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/testCases/rms/CompareOneFileLazada.java
+/Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/utils/RetryClick.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/model/rms/shopee/ShopeeCommissionFee.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/model/poms/CreateNewPOMS.java
 /Users/lkhoaa/IdeaProjects/Opollo-test-auto/Opollo/src/test/java/com/lkhoaa/model/oms/NewB2BPage.java

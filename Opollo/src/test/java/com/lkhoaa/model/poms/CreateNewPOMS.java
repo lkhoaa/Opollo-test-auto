@@ -4,11 +4,10 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public class CreateNewPOMS {
     private final WebDriver driver;
-    private WebDriverWait wait;
+    private final WebDriverWait wait;
 
     public CreateNewPOMS(WebDriver driver) {
         this.driver = driver;
@@ -108,13 +107,13 @@ public class CreateNewPOMS {
     }
 
     @Step("Verify that the PO order create success")
-    public void getTitle() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='PO Number']")));
-        WebElement inputElement = driver.findElement(By.xpath("//input[@placeholder='PO Number']"));
+    public void getPONumber() throws InterruptedException {
+        WebElement inputElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='PO Number']")));
         boolean isDisplayed = inputElement.isDisplayed();
+        Thread.sleep(2000);
+        String inputValue = inputElement.getAttribute("value");
         System.out.println("Element is displayed: " + isDisplayed);
         if (isDisplayed) {
-            String inputValue = inputElement.getAttribute("value");
             System.out.println("Input value: " + inputValue);
         } else {
             System.out.println("Element is not displayed on the page.");

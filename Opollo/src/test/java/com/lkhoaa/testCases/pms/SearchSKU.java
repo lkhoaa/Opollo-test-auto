@@ -1,7 +1,6 @@
 package com.lkhoaa.testCases.pms;
 
 import com.lkhoaa.model.loginpage.LoginPage;
-import com.lkhoaa.utils.DataLogin;
 import com.lkhoaa.utils.Webdriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class SearchSKU {
     public static void main(String[] args) throws InterruptedException {

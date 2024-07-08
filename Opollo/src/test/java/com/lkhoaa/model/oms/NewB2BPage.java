@@ -1,14 +1,18 @@
 package com.lkhoaa.model.oms;
 
 import io.qameta.allure.Step;
+import org.apache.commons.math3.analysis.function.Exp;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class NewB2BPage {
-    private final WebDriver driver;
+    private WebDriver driver;
+    private final WebDriverWait wait = new WebDriverWait(driver, 10000);
 
     public NewB2BPage(WebDriver driver) {
         this.driver = driver;
@@ -38,7 +42,7 @@ public class NewB2BPage {
         return this;
     }
 
-    @Step("Select WH")
+    @Step("Select Warehouse")
     public NewB2BPage selectWH() {
         driver.findElement(By.id("react-select-3-input")).sendKeys("phuc" + Keys.ENTER);
         return this;
@@ -64,7 +68,7 @@ public class NewB2BPage {
     }
 
     @Step("Add SKU")
-    public NewB2BPage addNewSKU() throws InterruptedException{
+    public NewB2BPage addNewSKU() throws InterruptedException {
         driver.findElement(By.cssSelector(".b2b__sku_title > :nth-child(1) > .btn")).click();
         driver.findElement(By.cssSelector(":nth-child(2) > .on_error")).sendKeys("skuoct_tunn_48");
         driver.findElement(By.cssSelector("td:nth-child(6) > .form-control")).sendKeys("2222");
@@ -84,5 +88,29 @@ public class NewB2BPage {
     public void assertTitle() {
         String titleB2BOrder = driver.findElement(By.xpath("//h2[normalize-space()='B2B Orders']")).getText();
         Assert.assertEquals("B2B Orders", titleB2BOrder, "Create B2B order failed");
+    }
+
+    @Step("Open B2B detail")
+    public NewB2BPage openB2BDetail() {
+        WebElement firstRow = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tbody/tr[@class='content-row'][1]")));
+        WebElement link = firstRow.findElement(By.xpath(".//a"));
+        link.click();
+        return this;
+    }
+
+    @Step("Approve and push order to WH")
+    public NewB2BPage pushOrderToWH() {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary' and text()='Approve']"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password"))).sendKeys("1234");
+        driver.findElement(By.xpath("//button[@class='btn btn-primary' and text()='Confirm']")).click();
+        return this;
+    }
+
+    @Step("Cancel order")
+    public void verifyStatusCancel() {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary' and text()='Cancel']"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='btn btn-primary' and text()='Confirm']"))).click();
+        String orderStatus = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='w-90 badge badge-secondary badge-pill']"))).getText();
+        Assert.assertEquals(orderStatus, "Cancelled", "Order status doesn't like expectation");
     }
 }
