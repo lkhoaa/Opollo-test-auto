@@ -2,8 +2,8 @@
 <suite name="Smoke test" parallel="classes" thread-count="2">
     <test name="Smoke test OMS">
         <classes>
-            <class name="com.lkhoaa.testCases.oms.CreateB2BOrder"/>
-            <class name="com.lkhoaa.testCases.oms.CreateB2COrder"/>
+            <class name="com.lkhoaa.testCases.outbound.CreateB2BOrder"/>
+            <class name="com.lkhoaa.testCases.outbound.CreateB2COrder"/>
         </classes>
     </test>
 </suite>

@@ -17,7 +17,7 @@ public class OpolloSellerVoucherFee {
             Workbook workbook = StreamingReader.builder().open(fis);
             Sheet sheet = workbook.getSheet("Seller Voucher");
 
-            int amountColumnIndex = 10;  // Column index 7 (0-based)
+            int amountColumnIndex = 11;
 
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);
@@ -27,11 +27,9 @@ public class OpolloSellerVoucherFee {
                 }
             }
 
-            // Print the total sum of commission amounts
             System.out.printf("Total sum of Seller Voucher fee on OP: ");
             System.out.printf("%.2f\n", totalSum);
 
-            // Close the workbook and file streams
             workbook.close();
             fis.close();
         } catch (IOException e) {

@@ -18,9 +18,9 @@ public class OpolloAffCommissionFee {
             Sheet sheet = workbook.getSheet("Affiliate Commission - Tiktok");
 
             for (Row row : sheet) {
-                Cell cell1 = row.getCell(2); //E
+                Cell cell1 = row.getCell(6); //G
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
-                    totalSum += cell1.getNumericCellValue();
+                    totalSum += 0-cell1.getNumericCellValue();
                 }
             }
 

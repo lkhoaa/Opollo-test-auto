@@ -1,9 +1,9 @@
 package com.lkhoaa.model.rms.compareFormular;
 
 import io.qameta.allure.Step;
-
 import java.io.File;
 
+import static com.lkhoaa.model.rms.lazada.LZDCampaignFee.sumOfLzdCampaignFee;
 import static com.lkhoaa.model.rms.lazada.LZDCommissionFee.sumOfLzdCommisionFee;
 import static com.lkhoaa.model.rms.lazada.LZDDamageFee.sumOfLzdDamageFee;
 import static com.lkhoaa.model.rms.lazada.LZDFreeShippingMaxFee.sumOfLzdFreeShippingMaxFee;
@@ -21,6 +21,7 @@ import static com.lkhoaa.model.rms.lazada.LZDSponsoredAffiliateFee.sumOfLzdSpons
 import static com.lkhoaa.model.rms.lazada.LZDWrongweightadjustmentFee.sumOfLzdWrongweightadjustmentFee;
 import static com.lkhoaa.model.rms.opollo.OPRevenueCompleted.sumOfOPRevenueCompletedFee;
 import static com.lkhoaa.model.rms.opollo.OPRevenueReturned.sumOfOPRevenueReturnedFee;
+import static com.lkhoaa.model.rms.opollo.OpolloCampaignFee.sumOfOPCampaignFee;
 import static com.lkhoaa.model.rms.opollo.OpolloCommissionFee.sumOfOPCommissionFee;
 import static com.lkhoaa.model.rms.opollo.OpolloDamageFee.sumOfOPDamageFee;
 import static com.lkhoaa.model.rms.opollo.OpolloFreeShippingMaxFee.sumOfOPFreeShippingMaxFee;
@@ -103,6 +104,10 @@ public class CalculateLazadaFee {
         double wrongWeightAdjustmentLZDFee = sumOfLzdWrongweightadjustmentFee(String.valueOf(filePath1));
         double wrongWeightAdjustmentOPFee = sumOfOPWrongweightadjustmentFee(String.valueOf(filePath2));
         compareSums(wrongWeightAdjustmentLZDFee, wrongWeightAdjustmentOPFee);
+
+        double campaignLZDFee = sumOfLzdCampaignFee(String.valueOf(filePath1));
+        double campaignOPFee = sumOfOPCampaignFee(String.valueOf(filePath2));
+        compareSums(campaignLZDFee, campaignOPFee);
         System.out.println("--------------------------------");
     }
 

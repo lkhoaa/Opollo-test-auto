@@ -17,7 +17,7 @@ public class OpolloLzdSubsidyFee {
             Workbook workbook = StreamingReader.builder().open(fis);
             Sheet sheet = workbook.getSheet("LzdSubsidy");
 
-            int amountColumnIndex = 7;
+            int amountColumnIndex = 8;
 
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);
@@ -26,11 +26,9 @@ public class OpolloLzdSubsidyFee {
                 }
             }
 
-            // Print the total sum of commission amounts
             System.out.printf("Total sum of LzdSubsidy amounts on OP: ");
             System.out.printf("%.2f\n", totalSum);
 
-            // Close the workbook and file streams
             workbook.close();
             fis.close();
         } catch (IOException e) {

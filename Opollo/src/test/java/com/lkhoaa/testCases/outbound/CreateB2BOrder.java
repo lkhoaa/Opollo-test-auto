@@ -1,4 +1,4 @@
-package com.lkhoaa.testCases.oms;
+package com.lkhoaa.testCases.outbound;
 
 import com.lkhoaa.driver.DriverBase;
 import com.lkhoaa.model.loginpage.LoginPage;

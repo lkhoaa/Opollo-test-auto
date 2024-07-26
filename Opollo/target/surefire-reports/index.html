@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Smoke_test" class="navigator-link">
-              <span class="suite-name border-passed">Smoke test</span>
+              <span class="suite-name border-failed">Smoke test</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,26 +93,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Smoke_test" class="hide-methods passed suite-Smoke_test"> (hide)</a> <!-- hide-methods passed suite-Smoke_test -->
-                      <a href="#" panel-name="suite-Smoke_test" class="show-methods passed suite-Smoke_test"> (show)</a> <!-- show-methods passed suite-Smoke_test -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Smoke_test" class="hide-methods failed suite-Smoke_test"> (hide)</a> <!-- hide-methods failed suite-Smoke_test -->
+                      <a href="#" panel-name="suite-Smoke_test" class="show-methods failed suite-Smoke_test"> (show)</a> <!-- show-methods failed suite-Smoke_test -->
                     </span>
-                    <div class="method-list-content passed suite-Smoke_test">
+                    <div class="method-list-content failed suite-Smoke_test">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_test" title="com.lkhoaa.testCases.oms.CreateB2BOrder" class="method navigator-link" hash-for-method="createB2BOrder">createB2BOrder</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_test" title="com.lkhoaa.testCases.outbound.CreateB2BOrder" class="method navigator-link" hash-for-method="createB2BOrder">createB2BOrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Smoke_test" title="com.lkhoaa.testCases.oms.CreateB2COrder" class="method navigator-link" hash-for-method="createB2COrder">createB2COrder</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Smoke_test" title="com.lkhoaa.testCases.outbound.CreateB2COrder" class="method navigator-link" hash-for-method="createB2COrder">createB2COrder</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Smoke_test -->
+                    </div> <!-- method-list-content failed suite-Smoke_test -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -124,25 +124,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Smoke_test" class="panel Smoke_test">
-          <div class="suite-Smoke_test-class-passed">
+          <div class="suite-Smoke_test-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.lkhoaa.testCases.oms.CreateB2BOrder</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="createB2BOrder">
-                  </a> <!-- createB2BOrder -->
-                  <span class="method-name">createB2BOrder</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Smoke_test-class-passed -->
-          <div class="suite-Smoke_test-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.lkhoaa.testCases.oms.CreateB2COrder</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.lkhoaa.testCases.outbound.CreateB2COrder</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -150,10 +135,80 @@
                   <a name="createB2COrder">
                   </a> <!-- createB2COrder -->
                   <span class="method-name">createB2COrder</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;label class=&quot;custom-control-label&quot; for=&quot;ghnundefined&quot;&gt;...&lt;/label&gt; is not clickable at point (102, 783). Other element would receive the click: &lt;div class=&quot;delivery-method-row&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=126.0.6478.127)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;OP-LT-0404.local&apos;, ip: &apos;fe80:0:0:0:ac:9749:b1ba:8647%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.5&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee2f8ea3c38662246f112ca7ce680bce
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.lkhoaa.testCases.outbound.CreateB2COrder.createB2COrder(CreateB2COrder.java:48)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Smoke_test-class-passed -->
+          </div> <!-- suite-Smoke_test-class-failed -->
+          <div class="suite-Smoke_test-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.lkhoaa.testCases.outbound.CreateB2BOrder</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createB2BOrder">
+                  </a> <!-- createB2BOrder -->
+                  <span class="method-name">createB2BOrder</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: react-select-2-input (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.lkhoaa.testCases.outbound.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:28)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#react\-select\-2\-input&quot;}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;OP-LT-0404.local&apos;, ip: &apos;fe80:0:0:0:ac:9749:b1ba:8647%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;14.5&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54738}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d41e2babe5c19e8092ac6bbdc753e57
+*** Element info: {Using=id, value=react-select-2-input}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 16 more
+... Removed 15 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Smoke_test-class-failed -->
         </div> <!-- panel Smoke_test -->
         <div panel-name="test-xml-Smoke_test" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -166,8 +221,8 @@
 &lt;suite thread-count=&quot;2&quot; parallel=&quot;classes&quot; name=&quot;Smoke test&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;2&quot; parallel=&quot;classes&quot; name=&quot;Smoke test OMS&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.lkhoaa.testCases.oms.CreateB2BOrder&quot;/&gt;
-      &lt;class name=&quot;com.lkhoaa.testCases.oms.CreateB2COrder&quot;/&gt;
+      &lt;class name=&quot;com.lkhoaa.testCases.outbound.CreateB2BOrder&quot;/&gt;
+      &lt;class name=&quot;com.lkhoaa.testCases.outbound.CreateB2COrder&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Smoke test OMS --&gt;
 &lt;/suite&gt; &lt;!-- Smoke test --&gt;
@@ -210,17 +265,17 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'createB2BOrder')
-data.setCell(0, 2, 'com.lkhoaa.testCases.oms.CreateB2BOrder')
-data.setCell(0, 3, 17229);
+data.setCell(0, 2, 'com.lkhoaa.testCases.outbound.CreateB2BOrder')
+data.setCell(0, 3, 16131);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'createB2COrder')
-data.setCell(1, 2, 'com.lkhoaa.testCases.oms.CreateB2COrder')
-data.setCell(1, 3, 13850);
+data.setCell(1, 2, 'com.lkhoaa.testCases.outbound.CreateB2COrder')
+data.setCell(1, 3, 7505);
 window.suiteTableData['Smoke_test']= { tableData: data, tableDiv: 'times-div-Smoke_test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 31 seconds</span>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
               <div id="times-div-Smoke_test">
               </div> <!-- times-div-Smoke_test -->
             </div> <!-- times-div -->
@@ -246,32 +301,36 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.lkhoaa.testCases.oms.CreateB2BOrder</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.lkhoaa.testCases.outbound.CreateB2BOrder</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">initWebdriverObject</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.lkhoaa.testCases.oms.CreateB2COrder</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">createB2COrder</span>
-                <span class="method-start">24 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.lkhoaa.testCases.oms.CreateB2BOrder</div> <!-- chronological-class-name -->
-              <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">createB2BOrder</span>
-                <span class="method-start">24 ms</span>
+                <span class="method-start">27 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lkhoaa.testCases.outbound.CreateB2COrder</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">createB2COrder</span>
+                <span class="method-start">27 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.lkhoaa.testCases.outbound.CreateB2BOrder</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=createB2BOrder status=SUCCESS method=CreateB2BOrder.createB2BOrder()[pri:0, instanc...)</span>
-                <span class="method-start">17255 ms</span>
+                <span class="method-name">afterMethod([TestResult name=createB2BOrder status=FAILURE method=CreateB2BOrder.createB2BOrder()[pri:0, instanc...)</span>
+                <span class="method-start">16166 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">17288 ms</span>
+                <span class="method-start">16416 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

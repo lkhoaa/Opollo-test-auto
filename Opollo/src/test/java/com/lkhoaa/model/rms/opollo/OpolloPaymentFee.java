@@ -12,27 +12,35 @@ public class OpolloPaymentFee {
     @Step("Opollo file: Calculate the sum of the column amount in the 'payment fee' sheet")
     public static double sumOfOPPaymentFee(String filePath) {
         double totalSum = 0;
+        double sum1 = 0;
+        double sum2 = 0;
+        double sum3 = 0;
         try {
             FileInputStream fis = new FileInputStream(new File(filePath));
-
             Workbook workbook = StreamingReader.builder().open(fis);
-
             Sheet sheet = workbook.getSheet("Payment Fee");
 
-            int amountColumnIndex = 11;  //
-
-            // Iterate through each row in the sheet
             for (Row row : sheet) {
-                // Get the fee name from the specified column
-                Cell cell = row.getCell(amountColumnIndex);
-                if (cell != null && cell.getCellType() == CellType.NUMERIC) {
-                    double amountCell = cell.getNumericCellValue();
-                    totalSum += 0-amountCell;
+                Cell cell1 = row.getCell(8); //I
+                if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
+                    double amountCell = cell1.getNumericCellValue();
+                    sum1 += 0-amountCell;
+                }
+                Cell cell2 = row.getCell(12); //M
+                if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
+                    double amountCell = cell2.getNumericCellValue();
+                    sum2 += 0-amountCell;
+                }
+                Cell cell3 = row.getCell(13); //N
+                if (cell3 != null && cell3.getCellType() == CellType.NUMERIC) {
+                    double amountCell = cell3.getNumericCellValue();
+                    sum3 += 0-amountCell;
                 }
             }
 
-            System.out.printf("Total sum of Payment fee on OP: ");
-            System.out.printf("%.2f\n", totalSum);
+            totalSum = sum1 + sum2 + sum3;
+//            System.out.printf("Total sum of Payment fee on OP: ");
+//            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

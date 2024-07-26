@@ -30,9 +30,7 @@ public class OPRevenueCompleted {
                     if (pisCellStr != null && pisCellStr.equals("Yes")) {
                         Cell amountCell = row.getCell(amountColumnIndex);
                         double amountValue = amountCell.getNumericCellValue();
-                        if (amountCell != null) {
-                            totalSum += amountValue;
-                        }
+                        totalSum += amountValue;
                     }
                 }
             }

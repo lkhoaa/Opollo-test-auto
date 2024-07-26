@@ -1,7 +1,6 @@
 package com.lkhoaa.model.rms.lazada;
 
 import com.monitorjbl.xlsx.StreamingReader;
-import io.qameta.allure.Step;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -12,50 +11,33 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class LZDFreeShippingMaxFee {
-    @Step("LZD file: Calculate the sum of the column amount in the Freeship Max fee")
     public static double sumOfLzdFreeShippingMaxFee(String filePath) {
         double totalSum = 0;
         double totalSum1 = 0;
         double totalSum2 = 0;
         try {
-            // Load the Excel file
             FileInputStream fis = new FileInputStream(new File(filePath));
-
-            // Create the workbook object
             Workbook workbook = StreamingReader.builder().open(fis);
-
-            // Get the first sheet of the workbook
             Sheet sheet = workbook.getSheetAt(0);
 
-            // Define the column indices for fee name and amount
             int feeNameIndex = 3;
             int amountColumnIndex = 4;
 
-            // Iterate through each row in the sheet
             for (Row row : sheet) {
-                // Get the fee name from the specified column
                 Cell feeCell = row.getCell(feeNameIndex);
                 String feeStr = feeCell.getStringCellValue();
                 if (feeStr != null && feeStr.equals("Free Shipping Max Fee")) {
-                    // Get the amount from the specified column
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
-                    if (amountCell != null) {
-                        // Add the amount to the total sum
-                        totalSum1 += amountValue;
-                    }
+                    totalSum1 += amountValue;
                 }
 
                 Cell feeCell2 = row.getCell(feeNameIndex);
                 String feeStr2 = feeCell2.getStringCellValue();
                 if (feeStr2 != null && feeStr2.equals("Reversal of Free Shipping Max Fee")) {
-                    // Get the amount from the specified column
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
-                    if (amountCell != null) {
-                        // Add the amount to the total sum
-                        totalSum2 += amountValue;
-                    }
+                    totalSum2 += amountValue;
                 }
             }
 

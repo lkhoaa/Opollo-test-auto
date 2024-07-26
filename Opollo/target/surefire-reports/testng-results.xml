@@ -1,42 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-08T13:55:40 ICT" name="Smoke test" finished-at="2024-07-08T13:55:57 ICT" duration-ms="17267">
+  <suite started-at="2024-07-19T11:43:21 ICT" name="Smoke test" finished-at="2024-07-19T11:43:37 ICT" duration-ms="16391">
     <groups>
     </groups>
-    <test started-at="2024-07-08T13:55:40 ICT" name="Smoke test OMS" finished-at="2024-07-08T13:55:57 ICT" duration-ms="17267">
-      <class name="com.lkhoaa.testCases.oms.CreateB2BOrder">
-        <test-method is-config="true" signature="initWebdriverObject()[pri:0, instance:com.lkhoaa.testCases.oms.CreateB2BOrder@997d532]" started-at="2024-07-08T13:55:40 ICT" name="initWebdriverObject" finished-at="2024-07-08T13:55:40 ICT" duration-ms="8" status="PASS">
+    <test started-at="2024-07-19T11:43:21 ICT" name="Smoke test OMS" finished-at="2024-07-19T11:43:37 ICT" duration-ms="16391">
+      <class name="com.lkhoaa.testCases.outbound.CreateB2BOrder">
+        <test-method is-config="true" signature="initWebdriverObject()[pri:0, instance:com.lkhoaa.testCases.outbound.CreateB2BOrder@6fd5717c]" started-at="2024-07-19T11:43:21 ICT" name="initWebdriverObject" finished-at="2024-07-19T11:43:21 ICT" duration-ms="8" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initWebdriverObject -->
-        <test-method signature="createB2BOrder()[pri:0, instance:com.lkhoaa.testCases.oms.CreateB2BOrder@997d532]" started-at="2024-07-08T13:55:40 ICT" name="createB2BOrder" finished-at="2024-07-08T13:55:57 ICT" duration-ms="17229" status="PASS">
+        <test-method signature="createB2BOrder()[pri:0, instance:com.lkhoaa.testCases.outbound.CreateB2BOrder@6fd5717c]" started-at="2024-07-19T11:43:21 ICT" name="createB2BOrder" finished-at="2024-07-19T11:43:37 ICT" duration-ms="16131" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.id: react-select-2-input (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: react-select-2-input (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.lkhoaa.testCases.outbound.CreateB2BOrder.createB2BOrder(CreateB2BOrder.java:28)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#react\-select\-2\-input"}
+  (Session info: chrome=126.0.6478.127)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'OP-LT-0404.local', ip: 'fe80:0:0:0:ac:9749:b1ba:8647%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54738}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8d41e2babe5c19e8092ac6bbdc753e57
+*** Element info: {Using=id, value=react-select-2-input}
+at jdk.internal.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 16 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createB2BOrder -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.lkhoaa.testCases.oms.CreateB2BOrder@997d532]" started-at="2024-07-08T13:55:57 ICT" name="afterMethod" finished-at="2024-07-08T13:55:57 ICT" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.lkhoaa.testCases.outbound.CreateB2BOrder@6fd5717c]" started-at="2024-07-19T11:43:37 ICT" name="afterMethod" finished-at="2024-07-19T11:43:37 ICT" duration-ms="228" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createB2BOrder status=SUCCESS method=CreateB2BOrder.createB2BOrder()[pri:0, instance:com.lkhoaa.testCases.oms.CreateB2BOrder@997d532] output={null}]]]>
+                <![CDATA[[TestResult name=createB2BOrder status=FAILURE method=CreateB2BOrder.createB2BOrder()[pri:0, instance:com.lkhoaa.testCases.outbound.CreateB2BOrder@6fd5717c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.lkhoaa.testCases.oms.CreateB2BOrder@997d532]" started-at="2024-07-08T13:55:57 ICT" name="afterMethod" finished-at="2024-07-08T13:55:58 ICT" duration-ms="174" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.lkhoaa.testCases.outbound.CreateB2BOrder@6fd5717c]" started-at="2024-07-19T11:43:37 ICT" name="afterMethod" finished-at="2024-07-19T11:43:38 ICT" duration-ms="102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.lkhoaa.testCases.oms.CreateB2BOrder -->
-      <class name="com.lkhoaa.testCases.oms.CreateB2COrder">
-        <test-method signature="createB2COrder()[pri:0, instance:com.lkhoaa.testCases.oms.CreateB2COrder@27aae97b]" started-at="2024-07-08T13:55:40 ICT" name="createB2COrder" finished-at="2024-07-08T13:55:54 ICT" duration-ms="13850" status="PASS">
+      </class> <!-- com.lkhoaa.testCases.outbound.CreateB2BOrder -->
+      <class name="com.lkhoaa.testCases.outbound.CreateB2COrder">
+        <test-method signature="createB2COrder()[pri:0, instance:com.lkhoaa.testCases.outbound.CreateB2COrder@344426bf]" started-at="2024-07-19T11:43:21 ICT" name="createB2COrder" finished-at="2024-07-19T11:43:29 ICT" duration-ms="7505" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <label class="custom-control-label" for="ghnundefined">...</label> is not clickable at point (102, 783). Other element would receive the click: <div class="delivery-method-row">...</div>
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'OP-LT-0404.local', ip: 'fe80:0:0:0:ac:9749:b1ba:8647%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee2f8ea3c38662246f112ca7ce680bce]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <label class="custom-control-label" for="ghnundefined">...</label> is not clickable at point (102, 783). Other element would receive the click: <div class="delivery-method-row">...</div>
+  (Session info: chrome=126.0.6478.127)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'OP-LT-0404.local', ip: 'fe80:0:0:0:ac:9749:b1ba:8647%en0', os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.5', java.version: '11.0.20'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: /var/folders/6q/h7zm4kv13tn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54737}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee2f8ea3c38662246f112ca7ce680bce
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com.lkhoaa.testCases.outbound.CreateB2COrder.createB2COrder(CreateB2COrder.java:48)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createB2COrder -->
-      </class> <!-- com.lkhoaa.testCases.oms.CreateB2COrder -->
+      </class> <!-- com.lkhoaa.testCases.outbound.CreateB2COrder -->
     </test> <!-- Smoke test OMS -->
   </suite> <!-- Smoke test -->
 </testng-results>

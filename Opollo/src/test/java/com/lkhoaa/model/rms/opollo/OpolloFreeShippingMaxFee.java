@@ -13,21 +13,13 @@ public class OpolloFreeShippingMaxFee {
     public static double sumOfOPFreeShippingMaxFee(String filePath) {
         double totalSum = 0;
         try {
-            // Load the Excel file
             FileInputStream fis = new FileInputStream(new File(filePath));
-
-            // Create the workbook object
             Workbook workbook = StreamingReader.builder().open(fis);
-
-            // Get the first sheet of the workbook
             Sheet sheet = workbook.getSheet("Freeship Max");
 
-            // Define the column indices for fee name and amount
-            int amountColumnIndex = 8;
+            int amountColumnIndex = 9;
 
-            // Iterate through each row in the sheet
             for (Row row : sheet) {
-                // Get the fee name from the specified column
                 Cell cell = row.getCell(amountColumnIndex);
                 if (cell != null && cell.getCellType() == CellType.NUMERIC) {
                     double amountCell = cell.getNumericCellValue();

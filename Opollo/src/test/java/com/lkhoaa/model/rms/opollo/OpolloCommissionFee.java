@@ -18,7 +18,7 @@ public class OpolloCommissionFee {
 
             Sheet sheet = workbook.getSheet("Commission Fee");
 
-            int amountColumnIndex = 10;
+            int amountColumnIndex = 11;
 
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);

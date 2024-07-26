@@ -1,4 +1,4 @@
-package com.lkhoaa.testCases.oms;
+package com.lkhoaa.testCases.outbound;
 
 import com.lkhoaa.model.loginpage.LoginPage;
 import com.lkhoaa.utils.RetryClick;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateB2COrder {

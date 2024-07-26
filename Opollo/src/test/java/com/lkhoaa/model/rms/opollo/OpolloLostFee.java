@@ -16,7 +16,7 @@ public class OpolloLostFee {
             FileInputStream fis = new FileInputStream(new File(filePath));
             Workbook workbook = StreamingReader.builder().open(fis);
             Sheet sheet = workbook.getSheet("Lost Claims");
-            int amountColumnIndex = 7;  //H
+            int amountColumnIndex = 8;  //H
 
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);

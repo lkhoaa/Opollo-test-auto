@@ -55,8 +55,6 @@ public class CalculateTTKFee {
         revenueTTK = sumOfTTKRevenue(String.valueOf(filePath1));
         revenueOP = sumOfOPRevenue(String.valueOf(filePath2));
 
-//        settlementAmountTTK = sumOfTTKSettlementAmount(String.valueOf(filePath1));
-//        statementAmountOP = sumOfOPStatementAmount(String.valueOf(filePath2));
         compareAllFee();
         System.out.println("=====================================");
     }
@@ -69,7 +67,6 @@ public class CalculateTTKFee {
         double differenceAffCommission = abs(affCommissionTTKFee - affCommissionOPFee);
         double differenceSFPService = abs(SFPServiceTTKFee - SFPServiceOPFee);
         double differenceRevenue = abs(revenueTTK - revenueOP);
-//        double differenceSettlementAmount = abs(settlementAmountTTK - statementAmountOP);
         if ((abs(differenceCommission
                 - differencePayment
                 - differenceShipping
@@ -103,10 +100,6 @@ public class CalculateTTKFee {
                 System.out.printf("Difference in Revenue: ");
                 System.out.printf("%.2f\n", differenceRevenue);
             }
-//            if (differenceSettlementAmount > tolerance) {
-//                System.out.printf("Difference in Settlement Amount: ");
-//                System.out.printf("%.2f\n", differenceSettlementAmount);
-//            }
         }
     }
 }
