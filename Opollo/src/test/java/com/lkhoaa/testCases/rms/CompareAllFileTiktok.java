@@ -7,7 +7,7 @@ import static com.lkhoaa.model.rms.compareFormular.CalculateTTKFee.compareTTKFee
 
 public class CompareAllFileTiktok {
     public static void main(String[] args) {
-        String folderPath = System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/";
+        String folderPath = System.getProperty("user.dir") + "/Opollo/src/test/data/Tiktok/";
 
         File folder = new File(folderPath);
         File[] files = folder.listFiles();

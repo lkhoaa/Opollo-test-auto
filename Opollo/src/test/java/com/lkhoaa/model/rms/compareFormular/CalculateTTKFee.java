@@ -1,6 +1,7 @@
 package com.lkhoaa.model.rms.compareFormular;
 
 import java.io.File;
+import java.io.IOException;
 
 import static com.lkhoaa.model.rms.opollo.OpolloAffCommissionFee.sumOfOPAffCommissionFee;
 import static com.lkhoaa.model.rms.opollo.OpolloCommissionFee.sumOfOPCommissionFee;
@@ -34,28 +35,35 @@ public class CalculateTTKFee {
         String excellFileName = fileName;
         System.out.println("TTK" + excellFileName.toUpperCase());
 
-        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Tiktok/" + excellFileName);
-        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName);
+        String filePath1 = System.getProperty("user.dir") + "/Opollo/src/test/data/Tiktok/" + excellFileName;
+        String filePath2 = System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName;
 
-        commissionTTKFee = sumOfTTKCommissionFee(String.valueOf(filePath1));
-        commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
+//        commissionTTKFee = sumOfTTKCommissionFee(String.valueOf(filePath1));
+//        commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
+//
+//        paymentTTKFee = sumOfTTKPaymentFee(String.valueOf(filePath1));
+//        paymentOPFee = sumOfOPPaymentFee(String.valueOf(filePath2));
+//
+//        shippingTTKFee = sumOfTTKShippingFee(String.valueOf(filePath1));
+//        shippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
+//
+//        affCommissionTTKFee = sumOfTTKAffCommissionFee(String.valueOf(filePath1));
+//        affCommissionOPFee = sumOfOPAffCommissionFee(String.valueOf(filePath2));
+//
+//        SFPServiceTTKFee = sumOfTTKSFPServiceFee(String.valueOf(filePath1));
+//        SFPServiceOPFee = sumOfOPSFPServiceFee(String.valueOf(filePath2));
+//
+//        revenueTTK = sumOfTTKRevenue(String.valueOf(filePath1));
+//        revenueOP = sumOfOPRevenue(String.valueOf(filePath2));
 
-        paymentTTKFee = sumOfTTKPaymentFee(String.valueOf(filePath1));
-        paymentOPFee = sumOfOPPaymentFee(String.valueOf(filePath2));
+//        compareAllFee();
 
-        shippingTTKFee = sumOfTTKShippingFee(String.valueOf(filePath1));
-        shippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
+        try {
+            ExcelComparator.compareExcelFiles(filePath1, filePath2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        affCommissionTTKFee = sumOfTTKAffCommissionFee(String.valueOf(filePath1));
-        affCommissionOPFee = sumOfOPAffCommissionFee(String.valueOf(filePath2));
-
-        SFPServiceTTKFee = sumOfTTKSFPServiceFee(String.valueOf(filePath1));
-        SFPServiceOPFee = sumOfOPSFPServiceFee(String.valueOf(filePath2));
-
-        revenueTTK = sumOfTTKRevenue(String.valueOf(filePath1));
-        revenueOP = sumOfOPRevenue(String.valueOf(filePath2));
-
-        compareAllFee();
         System.out.println("=====================================");
     }
 
