@@ -32,37 +32,36 @@ public class CalculateTTKFee {
     private static double revenueOP;
 
     public static void compareTTKFee(String fileName) {
-        String excellFileName = fileName;
-        System.out.println("TTK" + excellFileName.toUpperCase());
+        System.out.println("TTK" + fileName.toUpperCase());
 
-        String filePath1 = System.getProperty("user.dir") + "/Opollo/src/test/data/Tiktok/" + excellFileName;
-        String filePath2 = System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName;
+        String filePath1 = System.getProperty("user.dir") + "/Opollo/src/test/data/tiktok/" + fileName;
+        String filePath2 = System.getProperty("user.dir") + "/Opollo/src/test/data/opollo/" + fileName;
 
-//        commissionTTKFee = sumOfTTKCommissionFee(String.valueOf(filePath1));
-//        commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
-//
-//        paymentTTKFee = sumOfTTKPaymentFee(String.valueOf(filePath1));
-//        paymentOPFee = sumOfOPPaymentFee(String.valueOf(filePath2));
-//
-//        shippingTTKFee = sumOfTTKShippingFee(String.valueOf(filePath1));
-//        shippingOPFee = sumOfOPShippingFee(String.valueOf(filePath2));
-//
-//        affCommissionTTKFee = sumOfTTKAffCommissionFee(String.valueOf(filePath1));
-//        affCommissionOPFee = sumOfOPAffCommissionFee(String.valueOf(filePath2));
-//
-//        SFPServiceTTKFee = sumOfTTKSFPServiceFee(String.valueOf(filePath1));
-//        SFPServiceOPFee = sumOfOPSFPServiceFee(String.valueOf(filePath2));
-//
-//        revenueTTK = sumOfTTKRevenue(String.valueOf(filePath1));
-//        revenueOP = sumOfOPRevenue(String.valueOf(filePath2));
+        commissionTTKFee = sumOfTTKCommissionFee(filePath1);
+        commissionOPFee = sumOfOPCommissionFee(filePath2);
 
-//        compareAllFee();
+        paymentTTKFee = sumOfTTKPaymentFee(filePath1);
+        paymentOPFee = sumOfOPPaymentFee(filePath2);
 
-        try {
-            ExcelComparator.compareExcelFiles(filePath1, filePath2);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        shippingTTKFee = sumOfTTKShippingFee(filePath1);
+        shippingOPFee = sumOfOPShippingFee(filePath2);
+
+        affCommissionTTKFee = sumOfTTKAffCommissionFee(filePath1);
+        affCommissionOPFee = sumOfOPAffCommissionFee(filePath2);
+
+        SFPServiceTTKFee = sumOfTTKSFPServiceFee(filePath1);
+        SFPServiceOPFee = sumOfOPSFPServiceFee(filePath2);
+
+        revenueTTK = sumOfTTKRevenue(filePath1);
+        revenueOP = sumOfOPRevenue(filePath2);
+
+        compareAllFee();
+
+//        try {
+//            ExcelComparator.compareExcelFiles(filePath1, filePath2);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         System.out.println("=====================================");
     }

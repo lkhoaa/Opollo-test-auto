@@ -21,21 +21,21 @@ public class OpolloPaymentFee {
             Sheet sheet = workbook.getSheet("Payment Fee");
 
             for (Row row : sheet) {
-                Cell cell1 = row.getCell(8); //I
+                Cell cell1 = row.getCell(14); //O
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
                     double amountCell = cell1.getNumericCellValue();
                     sum1 += 0-amountCell;
                 }
-                Cell cell2 = row.getCell(12); //M
-                if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
-                    double amountCell = cell2.getNumericCellValue();
-                    sum2 += 0-amountCell;
-                }
-                Cell cell3 = row.getCell(13); //N
-                if (cell3 != null && cell3.getCellType() == CellType.NUMERIC) {
-                    double amountCell = cell3.getNumericCellValue();
-                    sum3 += 0-amountCell;
-                }
+//                Cell cell2 = row.getCell(12); //M
+//                if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
+//                    double amountCell = cell2.getNumericCellValue();
+//                    sum2 += 0-amountCell;
+//                }
+//                Cell cell3 = row.getCell(13); //N
+//                if (cell3 != null && cell3.getCellType() == CellType.NUMERIC) {
+//                    double amountCell = cell3.getNumericCellValue();
+//                    sum3 += 0-amountCell;
+//                }
             }
 
             totalSum = sum1 + sum2 + sum3;

@@ -25,13 +25,6 @@ public class TTKShippingFee {
             Sheet orderSheet = workbook.getSheetAt(0);
             for (Row row : orderSheet) {
                 try {
-                    Cell cell1 = row.getCell(15); //P
-                    if (cell1 != null && cell1.getCellType() == CellType.STRING) {
-                        java.lang.String cellValue = cell1.getStringCellValue();
-                        double numericValue = Double.parseDouble(cellValue);
-                        sum1 += numericValue;
-                    }
-
                     Cell cell2 = row.getCell(16); //Q
                     if (cell2 != null && cell2.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell2.getStringCellValue();
@@ -57,7 +50,7 @@ public class TTKShippingFee {
                     if (cell5 != null && cell5.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell5.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
-                        sum5 += numericValue;
+                        sum5 += 0 - numericValue;
                     }
 
                     Cell cell6 = row.getCell(20); //U
@@ -65,6 +58,13 @@ public class TTKShippingFee {
                         java.lang.String cellValue = cell6.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
                         sum6 += numericValue;
+                    }
+
+                    Cell cell1 = row.getCell(15); //P
+                    if (cell1 != null && cell1.getCellType() == CellType.STRING) {
+                        java.lang.String cellValue = cell1.getStringCellValue();
+                        double numericValue = Double.parseDouble(cellValue);
+                        sum1 += numericValue;
                     }
                 } catch (NumberFormatException e) {
                     System.err.print("");
