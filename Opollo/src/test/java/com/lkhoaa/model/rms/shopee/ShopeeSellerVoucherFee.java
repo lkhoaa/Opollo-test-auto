@@ -14,7 +14,7 @@ public class ShopeeSellerVoucherFee {
             Workbook workbook = StreamingReader.builder().open(fis);
 
             for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
-                if (workbook.getSheetName(i).startsWith("Income")) {
+                if (workbook.getSheetName(i).startsWith("Income") || workbook.getSheetName(i).startsWith("Doanh thu")) {
                     Sheet incomeSheet = workbook.getSheetAt(i);
                     for (Row row : incomeSheet) {
                         Cell cell = row.getCell(11); //L

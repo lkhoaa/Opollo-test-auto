@@ -19,7 +19,7 @@ public class TTKSFPServiceFee {
             Sheet orderSheet = workbook.getSheetAt(0);
             for (Row row : orderSheet) {
                 try {
-                    Cell cell = row.getCell(27); //AB
+                    Cell cell = row.getCell(27); //AE
                     if (cell != null && cell.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);

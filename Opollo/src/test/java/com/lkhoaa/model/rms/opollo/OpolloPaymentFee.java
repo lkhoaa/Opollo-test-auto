@@ -24,7 +24,7 @@ public class OpolloPaymentFee {
                 Cell cell1 = row.getCell(14); //O
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
                     double amountCell = cell1.getNumericCellValue();
-                    sum1 += 0-amountCell;
+                    sum1 += amountCell;
                 }
 //                Cell cell2 = row.getCell(12); //M
 //                if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {

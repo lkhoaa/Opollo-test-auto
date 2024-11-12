@@ -34,8 +34,8 @@ public class CalculateShopeeFee {
         String excellFileName = fileName;
         System.out.println("SPE" + excellFileName.toUpperCase());
 
-        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Shopee/" + excellFileName);
-        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excellFileName);
+        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/shopee/" + excellFileName);
+        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/opollo/" + excellFileName);
 
         commissionSPFee = sumOfCommissionFee(String.valueOf(filePath1));
         commissionOPFee = sumOfOPCommissionFee(String.valueOf(filePath2));
@@ -60,7 +60,7 @@ public class CalculateShopeeFee {
 
     public static void compareAllFee() {
         double tolerance = 0.0001;
-        System.out.println(abs(SPRevenue - OPRevenue));
+//        System.out.println(abs(SPRevenue - OPRevenue));
         if ((abs(abs(commissionSPFee - commissionOPFee)
                 - abs(paymentSPFee - paymentOPFee)
                 - abs(sellerVoucherSPFee - sellerVoucherOPFee)

@@ -50,7 +50,7 @@ public class TTKShippingFee {
                     if (cell5 != null && cell5.getCellType() == CellType.STRING) {
                         java.lang.String cellValue = cell5.getStringCellValue();
                         double numericValue = Double.parseDouble(cellValue);
-                        sum5 += 0 - numericValue;
+                        sum5 += numericValue;
                     }
 
                     Cell cell6 = row.getCell(20); //U
@@ -70,9 +70,10 @@ public class TTKShippingFee {
                     System.err.print("");
                 }
             }
-//            System.out.printf("Total sum of Shipping fee on TTK: ");
-//            System.out.printf("%.2f\n", totalSum);
+
             totalSum = sum1 + sum2 + sum3 + sum4 + sum5 + sum6;
+            System.out.printf("Total sum of Shipping fee on TTK: ");
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

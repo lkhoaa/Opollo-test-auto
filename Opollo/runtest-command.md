@@ -1,6 +1,6 @@
 `mvn clean test -Dsurefire.suiteXmlFiles=src/test/smokeTestOMS.xml`
 
-`mvn clean test "-Dsurefire.suiteXmlFiles=src/test/smokeTestOMS.xml" "-DtestingUrl=https://dev-admin.onpoint.vn"`
+`mvn clean test "-Dsurefire.suiteXmlFiles=src/test/smokeTestPMS.xml" "-DtestingUrl=https://dev-admin.onpoint.vn"`
 
 `allure generate allure-results --clean`
 

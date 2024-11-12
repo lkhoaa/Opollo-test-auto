@@ -24,7 +24,7 @@ public class OpolloCommissionFee {
                 Cell cell = row.getCell(amountColumnIndex);
                 if (cell != null && cell.getCellType() == CellType.NUMERIC) {
                     double amountCell = cell.getNumericCellValue();
-                    totalSum += 0 - amountCell;
+                    totalSum += 0-amountCell;
                 }
             }
 

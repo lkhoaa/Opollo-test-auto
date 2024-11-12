@@ -21,17 +21,17 @@ public class ShopeeShippingFee {
                 if (workbook.getSheetName(i).startsWith("Income")) {
                     Sheet incomeSheet = workbook.getSheetAt(i);
                     for (Row row : incomeSheet) {
-                        Cell cell = row.getCell(13);
+                        Cell cell = row.getCell(13); //N
                         if (cell != null && cell.getCellType() == CellType.NUMERIC) {
                             totalSum1 += cell.getNumericCellValue();
                         }
 
-                        Cell cell2 = row.getCell(14);
+                        Cell cell2 = row.getCell(14); //O
                         if (cell2 != null && cell2.getCellType() == CellType.NUMERIC) {
                             totalSum2 += cell2.getNumericCellValue();
                         }
 
-                        Cell cell3 = row.getCell(15);
+                        Cell cell3 = row.getCell(15); //P
                         if (cell3 != null && cell3.getCellType() == CellType.NUMERIC) {
                             totalSum3 += cell3.getNumericCellValue();
                         }

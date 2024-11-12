@@ -57,11 +57,11 @@ public class CalculateTTKFee {
 
         compareAllFee();
 
-//        try {
-//            ExcelComparator.compareExcelFiles(filePath1, filePath2);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            ExcelComparator.compareExcelFiles(filePath1, filePath2);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("=====================================");
     }

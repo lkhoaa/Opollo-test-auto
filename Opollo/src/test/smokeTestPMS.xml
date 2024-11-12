@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Smoke test" parallel="classes" thread-count="3">
+    <test name="Smoke test PMS">
+        <classes>
+            <class name="com.lkhoaa.testCases.pms.MassCreatePhysicalBundleSKU"/>
+            <class name="com.lkhoaa.testCases.pms.MassCreateVirtualBundleSKU"/>
+            <class name="com.lkhoaa.testCases.pms.MassCreateSingleSKU"/>
+            <class name="com.lkhoaa.testCases.pms.MassUpdatePhysicalBundleSKU"/>
+            <class name="com.lkhoaa.testCases.pms.MassUpdateVirtualBundleSKU"/>
+            <class name="com.lkhoaa.testCases.pms.MassUpdateSingleSKU"/>
+        </classes>
+    </test>
+</suite>

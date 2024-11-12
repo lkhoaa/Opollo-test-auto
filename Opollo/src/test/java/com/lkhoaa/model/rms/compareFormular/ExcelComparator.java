@@ -29,10 +29,10 @@ public class ExcelComparator {
         onlyInFile2.removeAll(file1Data);
         int onlyInFile2Count = onlyInFile2.size();
 
-        System.out.println("Number of rows in File Tiktok: " + file1Rows);
-        System.out.println("Number of rows in File Opollo: " + (file2Rows-1));
+        System.out.println("Number of order in Tiktok: " + file1Rows);
+        System.out.println("Number of order in Opollo: " + (file2Rows-1));
 //        System.out.println("Number of rows common in both files: " + commonRowsCount);
-        System.out.println("Number of rows only in File Tiktok: " + onlyInFile1Count);
+        System.out.println("Number of order only in Tiktok: " + onlyInFile1Count);
 //        System.out.println("Number of rows only in File Opollo: " + onlyInFile2Count);
         double rate = (file1Rows > 0) ? ((double) onlyInFile1Count / file1Rows) * 100 : 0;
         System.out.println("Rate of rows only in File Tiktok compared to total rows in File Tiktok: " + String.format("%.2f", rate) + "%");
@@ -42,7 +42,7 @@ public class ExcelComparator {
         Set<String> data = new HashSet<>();
 
         try (FileInputStream fis = new FileInputStream(filePath);
-             Workbook workbook = StreamingReader.builder().open(fis)) {
+            Workbook workbook = StreamingReader.builder().open(fis)) {
             Sheet sheet = workbook.getSheet(sheetName);
 
             for (Row row : sheet) {
