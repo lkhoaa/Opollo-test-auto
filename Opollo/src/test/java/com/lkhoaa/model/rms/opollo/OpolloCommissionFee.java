@@ -18,7 +18,7 @@ public class OpolloCommissionFee {
 
             Sheet sheet = workbook.getSheet("Commission Fee");
 
-            int amountColumnIndex = 8;
+            int amountColumnIndex = 11; //L
 
             for (Row row : sheet) {
                 Cell cell = row.getCell(amountColumnIndex);
@@ -28,8 +28,8 @@ public class OpolloCommissionFee {
                 }
             }
 
-//            System.out.printf("Total sum of Commission fee on OP: ");
-//            System.out.printf("%.2f\n", totalSum);
+            System.out.printf("Total sum of Commission fee on OP: ");
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

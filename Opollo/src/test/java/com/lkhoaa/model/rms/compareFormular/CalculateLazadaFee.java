@@ -42,8 +42,8 @@ public class CalculateLazadaFee {
         String excelFileName = fileName;
         System.out.println(excelFileName);
 
-        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/LZD/" + excelFileName);
-        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/Opollo/" + excelFileName);
+        File filePath1 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/lazada/" + excelFileName);
+        File filePath2 = new File(System.getProperty("user.dir") + "/Opollo/src/test/data/opollo/" + excelFileName);
 
         double revenueCompletedLZDFee = sumOfLzdRevenueCompletedFee(String.valueOf(filePath1));
         double revenueCompletedOPFee = sumOfOPRevenueCompletedFee(String.valueOf(filePath2));

@@ -4,7 +4,7 @@ import static com.lkhoaa.model.rms.compareFormular.CalculateLazadaFee.compareExc
 
 public class CompareOneFileLazada {
     public static void main(String[] args) {
-        String fileName = "mol";
+        String fileName = "lzdmde";
         String fileFullName = fileName + ".xlsx";
         compareExcelSums(fileFullName);
     }

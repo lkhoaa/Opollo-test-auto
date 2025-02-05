@@ -42,22 +42,18 @@ public class LZDCommissionFee {
                 Cell feeCell3 = row.getCell(feeNameIndex);
                 String feeStr3 = feeCell3.getStringCellValue();
                 if (feeStr3 != null && feeStr3.equals("Commission fee - correction for undercharge")) {
-                    // Get the amount from the specified column
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
                     if (amountCell != null) {
-                        // Add the amount to the total sum
                         totalSum3 += amountValue;
                     }
                 }
             }
 
-            // Print the total sum of commission amounts
             totalSum = totalSum1 + totalSum2 + totalSum3;
             System.out.printf("Total sum of Commission + Reversal + Correction for undercharge on LZD: ");
             System.out.printf("%.2f\n", totalSum);
 
-            // Close the workbook and file streams
             workbook.close();
             fis.close();
         } catch (IOException e) {

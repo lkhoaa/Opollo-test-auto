@@ -16,30 +16,20 @@ public class LZDWrongweightadjustmentFee {
     public static double sumOfLzdWrongweightadjustmentFee(String filePath) {
         double totalSum = 0;
         try {
-            // Load the Excel file
             FileInputStream fis = new FileInputStream(new File(filePath));
-
-            // Create the workbook object
             Workbook workbook = StreamingReader.builder().open(fis);
-
-            // Get the first sheet of the workbook
             Sheet sheet = workbook.getSheetAt(0);
 
-            // Define the column indices for fee name and amount
             int feeNameIndex = 3;
             int amountColumnIndex = 4;
 
-            // Iterate through each row in the sheet
             for (Row row : sheet) {
-                // Get the fee name from the specified column
                 Cell feeCell = row.getCell(feeNameIndex);
                 String feeStr = feeCell.getStringCellValue();
-                if (feeStr != null && feeStr.equals("Wrong Weight Adjustment")) {
-                    // Get the amount from the specified column
+                if (feeStr != null && feeStr.equals("Wrong Shipping Fee Adjustment")) {
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
                     if (amountCell != null) {
-                        // Add the amount to the total sum
                         totalSum += amountValue;
                     }
                 }

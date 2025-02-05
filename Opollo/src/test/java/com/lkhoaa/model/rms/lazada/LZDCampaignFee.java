@@ -26,7 +26,7 @@ public class LZDCampaignFee {
             for (Row row : sheet) {
                 Cell feeCell = row.getCell(feeNameIndex);
                 String feeStr = feeCell.getStringCellValue();
-                if (feeStr != null && feeStr.equals("Campaign Fee")) {
+                if (feeStr != null && feeStr.equals("Voucher Max")) {
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
                     sum1 += amountValue;
@@ -34,7 +34,7 @@ public class LZDCampaignFee {
 
                 Cell feeCell2 = row.getCell(feeNameIndex);
                 String feeStr2 = feeCell2.getStringCellValue();
-                if (feeStr2 != null && feeStr2.equals("Reversal Campaign Fee")) {
+                if (feeStr2 != null && feeStr2.equals("Reversal Voucher Max")) {
                     Cell amountCell = row.getCell(amountColumnIndex);
                     double amountValue = amountCell.getNumericCellValue();
                     sum2 += amountValue;
@@ -43,7 +43,7 @@ public class LZDCampaignFee {
 
             // Print the total sum of commission amounts
             totalSum = sum1 + sum2;
-            System.out.printf("Total sum of Campaign Fee + Reversal Campaign Fee: ");
+            System.out.printf("Total sum of Voucher Max + Reversal Voucher Max: ");
             System.out.printf("%.2f\n", totalSum);
 
             // Close the workbook and file streams

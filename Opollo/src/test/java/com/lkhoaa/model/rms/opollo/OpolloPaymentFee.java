@@ -39,8 +39,8 @@ public class OpolloPaymentFee {
             }
 
             totalSum = sum1 + sum2 + sum3;
-//            System.out.printf("Total sum of Payment fee on OP: ");
-//            System.out.printf("%.2f\n", totalSum);
+            System.out.printf("Total sum of Payment fee on OP: ");
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

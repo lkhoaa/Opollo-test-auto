@@ -17,29 +17,25 @@ public class OPRevenueCompleted {
             Workbook workbook = StreamingReader.builder().open(fis);
             Sheet sheet = workbook.getSheet("Sale Out");
 
-            int transactionTypeColumnIndex = 25;
-            int pisColumnIndex = 28;
-            int amountColumnIndex = 18;
-
             for (Row row : sheet) {
-                Cell transactionTypeCell = row.getCell(transactionTypeColumnIndex);
+                Cell transactionTypeCell = row.getCell(25); //Z
                 String transactionTypeCellStr = transactionTypeCell.getStringCellValue();
                 if (transactionTypeCellStr != null && transactionTypeCellStr.equals("completed")) {
-                    Cell pisCell = row.getCell(pisColumnIndex);
+                    Cell pisCell = row.getCell(28); //AC
                     String pisCellStr = pisCell.getStringCellValue();
                     if (pisCellStr != null && pisCellStr.equals("Yes")) {
-                        Cell amountCell = row.getCell(amountColumnIndex);
-                        double amountValue = amountCell.getNumericCellValue();
-                        totalSum += amountValue;
+                        Cell amountCell = row.getCell(18); //S
+                        if (amountCell != null && amountCell.getCellType() == CellType.NUMERIC) {
+                            double amountValue = amountCell.getNumericCellValue();
+                            totalSum += amountValue;
+                        }
                     }
                 }
             }
 
-            // Print the total sum of commission amounts
             System.out.printf("Total sum of revenue amount of order completed on OP: ");
             System.out.printf("%.2f\n", totalSum);
 
-            // Close the workbook and file streams
             workbook.close();
             fis.close();
         } catch (IOException e) {

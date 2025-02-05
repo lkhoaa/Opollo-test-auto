@@ -18,7 +18,7 @@ public class OpolloRevenueTTK {
             Sheet sheet = workbook.getSheet("Sale Out");
 
             for (Row row : sheet) {
-                Cell cell1 = row.getCell(19); //S
+                Cell cell1 = row.getCell(19); //T
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
                     totalSum += cell1.getNumericCellValue();
                 }

@@ -17,7 +17,7 @@ public class CreateNewPOMS {
     @Step("Select expected date")
     public CreateNewPOMS selectExpectedDate() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name=\"received_date\"]"))).click();
-        WebElement desiredDate = driver.findElement(By.cssSelector(".open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label=\"July 30, 2024\"]"));
+        WebElement desiredDate = driver.findElement(By.cssSelector(".open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label=\"November 30, 2024\"]"));
         desiredDate.click();
         return this;
     }
@@ -25,7 +25,7 @@ public class CreateNewPOMS {
     @Step("Select PO date")
     public CreateNewPOMS selectPODate() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name=\"po_date\"]"))).click();
-        WebElement desiredDate = driver.findElement(By.cssSelector(".open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label=\"July 30, 2024\"]"));
+        WebElement desiredDate = driver.findElement(By.cssSelector(".open > .flatpickr-innerContainer > .flatpickr-rContainer > .flatpickr-days > .dayContainer > [aria-label=\"November 30, 2024\"]"));
         desiredDate.click();
         return this;
     }
@@ -56,7 +56,13 @@ public class CreateNewPOMS {
 
     @Step("Input WH")
     public CreateNewPOMS selectWH() {
-        driver.findElement(By.id("react-select-6-input")).sendKeys("phuc" + Keys.ENTER);
+        driver.findElement(By.id("react-select-6-input")).sendKeys("octopos phuc" + Keys.ENTER);
+        return this;
+    }
+
+    @Step("Input inbound type")
+    public CreateNewPOMS selectIBType() {
+        driver.findElement(By.id("react-select-7-input")).sendKeys("item" + Keys.ENTER);
         return this;
     }
 
@@ -95,6 +101,12 @@ public class CreateNewPOMS {
     @Step("Confirm Modal Type")
     public CreateNewPOMS confirmModalType() {
         driver.findElement(By.xpath("//label[@for='confirm_model_type']")).click();
+        return this;
+    }
+
+    @Step("Confirm IB Type")
+    public CreateNewPOMS confirmIBType() {
+        driver.findElement(By.xpath("//label[@for='confirm_inbound_type']")).click();
         return this;
     }
 
