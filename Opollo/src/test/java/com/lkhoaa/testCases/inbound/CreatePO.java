@@ -23,8 +23,7 @@ public class CreatePO extends DriverBase {
         // Create new PO order
         driver.get(Url.currentTestUrl("NEW_PO"));
         CreateNewPOMS newPOPage = new CreateNewPOMS(driver);
-        newPOPage
-                .selectExpectedDate()
+        newPOPage.selectExpectedDate()
                 .selectPODate()
                 .selectPOType()
                 .selectChannel()

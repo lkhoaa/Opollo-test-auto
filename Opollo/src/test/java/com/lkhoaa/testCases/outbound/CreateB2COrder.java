@@ -61,7 +61,7 @@ public class CreateB2COrder {
         /*Open Opollo to verify order*/
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("khoa.le@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
+        loginPage.inputUsername("***").inputPassword("1234").clickOnLoginBtn();
 
         System.out.println("Verify order has been pulled to Opollo");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder='#Order No']"))).sendKeys(orderNo);

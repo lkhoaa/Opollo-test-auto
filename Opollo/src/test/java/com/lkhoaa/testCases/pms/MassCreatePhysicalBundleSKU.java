@@ -17,7 +17,7 @@ import java.io.IOException;
 public class MassCreatePhysicalBundleSKU {
     @Test
     public void massCreatePhysicalBundleSKU() throws IOException, InterruptedException {
-        String filePath = System.getProperty("user.dir") + "/src/test/data/pms/physical_bundle_import_create_template_v7.xlsx";
+        String filePath = System.getProperty("user.dir") + "/src/test/data/pms/physical_bundle_import_create_template_v8.xlsx";
         UpdateFileCreatePhysicalBundleSKU updateFileCreatePhysicalBundleSKU = new UpdateFileCreatePhysicalBundleSKU();
         updateFileCreatePhysicalBundleSKU.updateExcelFile(filePath);
 
@@ -28,7 +28,7 @@ public class MassCreatePhysicalBundleSKU {
         System.out.println("Logging in");
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("khoa.le@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
+        loginPage.inputUsername("***").inputPassword("1234").clickOnLoginBtn();
 
         System.out.println("Start upload file");
         driver.get("https://dev-admin.onpoint.vn/pms/opollo_products/import_physical_bundle");

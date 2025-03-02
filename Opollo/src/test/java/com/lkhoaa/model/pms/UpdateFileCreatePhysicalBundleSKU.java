@@ -24,11 +24,12 @@ public class UpdateFileCreatePhysicalBundleSKU {
             row = sheet.createRow(3);
         }
 
-        setCellValue(row, 0, generateRandomString()); // Column A
+        String value = "LK" + generateRandomString();
+        setCellValue(row, 0, value); // Column A
         setCellValue(row, 1, "NESTLE"); // Column B
         setCellValue(row, 2, "outright"); // Column C
         setCellValue(row, 3, "NESTLE"); // Column D
-        setCellValue(row, 4, generateRandomString()); // Column E
+        setCellValue(row, 4, value); // Column E
         setCellValue(row, 6, "Physical Bundle"); // Column G
         setCellValue(row, 7, "Each"); // Column H
         setCellValue(row, 8, "Sell"); // Column I
@@ -39,7 +40,7 @@ public class UpdateFileCreatePhysicalBundleSKU {
         setCellValue(row, 20, 3); // Column U
         setCellValue(row, 21, 4); // Column V
         setCellValue(row, 22, 222); // Column W
-        setCellValue(row, 23, 123); // Column X
+        setCellValue(row, 23, 0); // Column X
         setCellValue(row, 24, 3333); // Column Y
         setCellValue(row, 25, 4444); // Column Z
         setCellValue(row, 27, "all"); // Column AB

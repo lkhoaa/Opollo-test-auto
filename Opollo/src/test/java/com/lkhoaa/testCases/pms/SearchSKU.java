@@ -18,7 +18,7 @@ public class SearchSKU {
         System.out.println("Logging in");
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("khoa.le@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
+        loginPage.inputUsername("***").inputPassword("1234").clickOnLoginBtn();
 
         driver.get("https://dev-admin.onpoint.vn/pms/opollo_products?status=active");
         System.out.println("Input SKU");

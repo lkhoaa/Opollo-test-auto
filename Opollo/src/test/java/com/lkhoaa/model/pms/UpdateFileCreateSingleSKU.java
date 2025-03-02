@@ -24,13 +24,14 @@ public class UpdateFileCreateSingleSKU {
             row = sheet.createRow(3);
         }
 
-        setCellValue(row, 0, "TESTSYNC100"); // Column A
+        String value = "LK" + generateRandomString();
+        setCellValue(row, 0, value); // Column A
         setCellValue(row, 1, generateRandomString()); // Column B
         setCellValue(row, 2, generateRandomString()); // Column C
         setCellValue(row, 3, "NESTLE"); // Column D
         setCellValue(row, 4, "outright"); // Column E
         setCellValue(row, 5, "NESTLE"); // Column F
-        setCellValue(row, 6, generateRandomString()); // Column G
+        setCellValue(row, 6, value); // Column G
         setCellValue(row, 8, "Single SKU"); // Column I
         setCellValue(row, 9, "Each"); // Column J
         setCellValue(row, 10, "Sell"); // Column K

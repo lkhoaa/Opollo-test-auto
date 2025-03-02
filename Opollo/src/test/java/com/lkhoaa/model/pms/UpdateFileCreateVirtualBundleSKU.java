@@ -24,11 +24,12 @@ public class UpdateFileCreateVirtualBundleSKU {
             row = sheet.createRow(3);
         }
 
-        setCellValue(row, 0, generateRandomString()); // Column A
+        String value = "LK" + generateRandomString();
+        setCellValue(row, 0, value); // Column A
         setCellValue(row, 1, "NESTLE"); // Column B
         setCellValue(row, 2, "outright"); // Column C
         setCellValue(row, 3, "NESTLE"); // Column D
-        setCellValue(row, 4, generateRandomString()); // Column E
+        setCellValue(row, 4, value); // Column E
         setCellValue(row, 6, "Virtual Bundle"); // Column G
         setCellValue(row, 7, "Each"); // Column H
         setCellValue(row, 8, "Sell"); // Column I

@@ -24,10 +24,11 @@ public class UpdateFileEditPhysicalBundleSKU {
             row = sheet.createRow(3);
         }
 
+        String value = "LK" + generateRandomString();
         setCellValue(row, 0, "SKUPHY001"); // Column A
         setCellValue(row, 1, "NESTLE"); // Column B
-        setCellValue(row, 2, generateRandomString()); // Column C
-        setCellValue(row, 3, generateRandomString()); // Column D
+        setCellValue(row, 2, value); // Column C
+        setCellValue(row, 3, value); // Column D
         setCellValue(row, 4, "Each"); // Column E
         setCellValue(row, 5, "Sell"); // Column F
         setCellValue(row, 6, "IE"); // Column G

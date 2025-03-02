@@ -21,7 +21,7 @@ public class CreateB2BOrder extends DriverBase {
 
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("khoa.le@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
+        loginPage.inputUsername("***").inputPassword("1234").clickOnLoginBtn();
 
         driver.get("https://dev-admin.onpoint.vn/oms/b2b_orders/create");
         System.out.println("Select type");
