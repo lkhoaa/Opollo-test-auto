@@ -26,7 +26,7 @@ jobs:
         with:
           maven-version: 3.10.1
       - name: Run tests
-        run: mvn test
+        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
       - name: Generate Allure report
         run: mvn allure:report
       - name: Deploy report to GitHub Pages
