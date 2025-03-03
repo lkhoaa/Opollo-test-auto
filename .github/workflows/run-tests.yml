@@ -1,0 +1,36 @@
+name: Run Selenium Tests and Generate Allure Report
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: Ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/[email protected]
+      - name: Set up Java
+        uses: actions/[email protected]
+        with:
+          java-version: '17'
+      - name: Set up Chrome
+        uses: actions/[email protected]
+        with:
+          chrome-version: 100.0.4896.60
+      - name: Set up Maven
+        uses: actions/[email protected]
+        with:
+          maven-version: 3.10.1
+      - name: Run tests
+        run: mvn test
+      - name: Generate Allure report
+        run: mvn allure:report
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/[email protected]
+        with:
+          publish_dir: ./target/allure-report
+          publish_branch: gh-pages
