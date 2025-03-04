@@ -12,9 +12,9 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-#        uses: actions/[email protected]
+        uses: actions/[email protected]
       - name: Set up Java
-#        uses: actions/[email protected]
+        uses: actions/[email protected]
         with:
           java-version: '17'
       - name: Install Chrome and Chromedriver
@@ -25,7 +25,7 @@ jobs:
         with:
           chrome-version: 132.0.6834.83
       - name: Set up Maven
-#        uses: actions/[email protected]
+        uses: actions/[email protected]
         with:
           maven-version: 3.10.1
       - name: Run tests
@@ -33,7 +33,7 @@ jobs:
       - name: Generate Allure report
         run: allure generate allure-results --clean
       - name: Deploy report to GitHub Pages
-#        uses: peaceiris/[email protected]
+        uses: peaceiris/[email protected]
         with:
           publish_dir: ./target/allure-report
           publish_branch: gh-pages
