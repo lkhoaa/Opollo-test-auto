@@ -22,7 +22,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y chromium-browser
           sudo apt-get install -y chromium-chromedriver
-        uses: actions/[email protected]
         with:
           chrome-version: 132.0.6834.83
       - name: Set up Maven
