@@ -17,10 +17,14 @@ jobs:
         uses: actions/[email protected]
         with:
           java-version: '17'
-      - name: Set up Chrome
+      - name: Install Chrome and Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium-chromedriver
         uses: actions/[email protected]
         with:
-          chrome-version: 100.0.4896.60
+          chrome-version: 132.0.6834.83
       - name: Set up Maven
         uses: actions/[email protected]
         with:
@@ -28,7 +32,7 @@ jobs:
       - name: Run tests
         run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
       - name: Generate Allure report
-        run: mvn allure:report
+        run: allure generate allure-results --clean
       - name: Deploy report to GitHub Pages
         uses: peaceiris/[email protected]
         with:
