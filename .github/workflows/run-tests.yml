@@ -7,33 +7,39 @@ on:
 
 jobs:
   build:
-    runs-on: Ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
           java-version: '18'
+
       - name: Install Chrome and Chromedriver
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser=132.0.6834.83-0ubuntu1
-          sudo apt-get install -y chromium-chromedriver=132.0.6834.83-0ubuntu1
-        with:
-          chrome-version: 132.0.6834.83
+          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium-chromedriver
+
       - name: Set up Maven
         uses: actions/setup-java@v3
         with:
           maven-version: 3.10.1
+
       - name: Run tests
         run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+
       - name: Generate Allure report
-        run: allure generate allure-results --clean
+        run: |
+          mkdir -p allure-report
+          allure generate --clean -o allure-report
+
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./target/allure-report
+          publish_dir: ./allure-report
           publish_branch: gh-pages
