@@ -12,25 +12,28 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/[email protected]
+        uses: actions/checkout@v2
       - name: Set up Java
         uses: actions/[email protected]
         with:
           java-version: '17'
-      - name: Set up Chrome
-        uses: actions/[email protected]
+      - name: Install Chrome and Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser=132.0.6834.83-0ubuntu1
+          sudo apt-get install -y chromium-chromedriver=132.0.6834.83-0ubuntu1
         with:
-          chrome-version: 100.0.4896.60
+          chrome-version: 132.0.6834.83
       - name: Set up Maven
         uses: actions/[email protected]
         with:
-          maven-version: 3.8.6
+          maven-version: 3.10.1
       - name: Run tests
-        run: mvn test
+        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
       - name: Generate Allure report
-        run: mvn allure:report
+        run: allure generate allure-results --clean
       - name: Deploy report to GitHub Pages
-        uses: peaceiris/[email protected]
+        uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./target/allure-report
           publish_branch: gh-pages
