@@ -12,7 +12,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/[email protected]
+        uses: actions/checkout@v2
       - name: Set up Java
         uses: actions/[email protected]
         with:
@@ -20,8 +20,8 @@ jobs:
       - name: Install Chrome and Chromedriver
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          sudo apt-get install -y chromium-chromedriver
+          sudo apt-get install -y chromium-browser=132.0.6834.83-0ubuntu1
+          sudo apt-get install -y chromium-chromedriver=132.0.6834.83-0ubuntu1
         with:
           chrome-version: 132.0.6834.83
       - name: Set up Maven
@@ -33,7 +33,7 @@ jobs:
       - name: Generate Allure report
         run: allure generate allure-results --clean
       - name: Deploy report to GitHub Pages
-        uses: peaceiris/[email protected]
+        uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./target/allure-report
-          publish_branch: main
+          publish_branch: gh-pages
