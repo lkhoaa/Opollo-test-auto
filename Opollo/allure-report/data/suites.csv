@@ -1,2 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","10417","createPO6Steps","POMS","Fri Mar 07 17:12:07 GMT+07:00 2025","broken","Fri Mar 07 17:12:18 GMT+07:00 2025","com.lkhoaa.testCases.inbound.CreatePO6Steps","Test create new POMS order","com.lkhoaa.testCases.inbound.CreatePO6Steps","createPO6Steps"

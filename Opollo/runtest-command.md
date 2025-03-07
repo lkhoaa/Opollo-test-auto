@@ -1,6 +1,6 @@
 `mvn clean test "-Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml" "-DtestingUrl=https://dev-admin.onpoint.vn"`
 
-`allure generate allure-results --clean`
+cd Opollo -> `allure generate allure-results --clean -o allure-report`
 
 ##remove allure report##
-`rm -rf allure-re*`
+cd Opollo -> `rm -rf allure-re*`

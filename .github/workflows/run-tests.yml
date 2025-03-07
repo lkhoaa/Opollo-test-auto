@@ -31,15 +31,23 @@ jobs:
           maven-version: 3.10.1
 
       - name: Run tests
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+        run: |
+          mkdir -p Opollo/allure-results
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+        env:
+          ALLURE_RESULTS_DIR: Opollo/allure-results
 
       - name: Generate Allure report
         run: |
-          mkdir -p allure-report
-          allure generate --clean -o allure-report
+          mkdir -p Opollo/allure-report
+          allure generate Opollo/allure-results --clean -o Opollo/allure-report
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./allure-report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Opollo/allure-report
           publish_branch: gh-pages
+
+      - name: Read index.html from Allure Report
+        run: cat Opollo/allure-report/index.html
