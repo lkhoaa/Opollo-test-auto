@@ -40,23 +40,19 @@ jobs:
         working-directory: Opollo
         run: |
           mkdir -p allure-results
-          mvn clean test -Dsurefire.suiteXmlFiles=test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
         env:
           ALLURE_RESULTS_DIR: allure-results
 
       - name: Generate Allure report
         working-directory: Opollo
         run: |
-          mkdir -p allure-report
-          allure generate allure-results --clean -o allure-report
+          mkdir -p ../allure-report
+          allure generate allure-results --clean -o ../allure-report
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: Opollo/allure-report
+          publish_dir: allure-report  # Deploy directly to repo root
           publish_branch: gh-pages
-
-      - name: Read index.html from Allure Report
-        working-directory: Opollo
-        run: cat allure-report/index.html
