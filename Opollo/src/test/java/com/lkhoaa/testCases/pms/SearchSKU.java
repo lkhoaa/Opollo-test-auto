@@ -9,10 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class SearchSKU {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = Webdriver.getChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10000);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.manage().window().maximize();
 
         System.out.println("Logging in");

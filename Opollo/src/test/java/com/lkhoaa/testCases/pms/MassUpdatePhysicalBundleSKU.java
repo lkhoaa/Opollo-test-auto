@@ -12,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class MassUpdatePhysicalBundleSKU {
     @Test
@@ -21,7 +22,7 @@ public class MassUpdatePhysicalBundleSKU {
         updateFileEditPhysicalBundleSKU.updateExcelFile(filePath);
 
         WebDriver driver = Webdriver.getChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10000);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.manage().window().maximize();
 
         System.out.println("Logging in");

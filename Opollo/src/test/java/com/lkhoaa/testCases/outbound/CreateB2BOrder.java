@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+
 public class CreateB2BOrder extends DriverBase {
     @Test
     public void createB2BOrder() throws InterruptedException {

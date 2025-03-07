@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class LoginPage {
 
     private final WebDriver driver;
@@ -18,7 +20,7 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public WebElement loginBtn() {
