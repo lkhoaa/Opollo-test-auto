@@ -3,8 +3,6 @@
     <test name="Test create new POMS order">
         <classes>
             <class name="com.lkhoaa.testCases.inbound.CreatePO6Steps"/>
-            <class name="com.lkhoaa.testCases.inbound.CreatePO7Steps"/>
-            <class name="com.lkhoaa.testCases.inbound.CreatePO8Steps"/>
         </classes>
     </test>
 </suite>

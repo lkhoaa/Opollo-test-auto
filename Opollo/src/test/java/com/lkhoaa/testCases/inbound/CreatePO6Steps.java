@@ -19,7 +19,7 @@ public class CreatePO6Steps {
         /*Step 1: Login*/
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("***").inputPassword("***").clickOnLoginBtn();
+        loginPage.inputUsername("test01@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
 
         /*Step 2: Navigate to create PO page*/
         driver.get("https://dev-admin.onpoint.vn/purchase_order_v2/new");
