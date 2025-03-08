@@ -1,16 +1,12 @@
 package com.lkhoaa.testCases.inbound;
 
 import com.lkhoaa.model.loginpage.LoginPage;
-import com.lkhoaa.utils.Webdriver;
-import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
-import java.time.Duration;
 
 public class CreatePO6Steps {
     @Test
