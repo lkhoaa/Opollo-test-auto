@@ -30,8 +30,9 @@ public class TTKPaymentFee {
                     System.err.print("");
                 }
             }
-
             totalSum = sum1 + sum2 + sum3;
+            System.out.printf("Total sum of Payment fee on TTK: ");
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

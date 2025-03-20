@@ -40,6 +40,9 @@ public class TTKAffCommissionFee {
             }
 
             totalSum = sum1 + sum2;
+            System.out.printf("Total sum of AffCommission fee on TTK: ");
+            System.out.printf("%.2f\n", totalSum);
+
             workbook.close();
             fis.close();
         } catch (IOException e) {

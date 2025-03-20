@@ -18,11 +18,14 @@ public class OpolloSFPServiceFee {
             Sheet sheet = workbook.getSheet("SFP Service Fee - Tiktok");
 
             for (Row row : sheet) {
-                Cell cell1 = row.getCell(3); //D
+                Cell cell1 = row.getCell(4); //E
                 if (cell1 != null && cell1.getCellType() == CellType.NUMERIC) {
                     totalSum += 0-cell1.getNumericCellValue();
                 }
             }
+
+            System.out.printf("Total sum of SFP service fee on OP: ");
+            System.out.printf("%.2f\n", totalSum);
 
             workbook.close();
             fis.close();

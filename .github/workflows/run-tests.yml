@@ -6,24 +6,45 @@ on:
       - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 18
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
           java-version: '18'
           distribution: 'temurin'
-      - name: Verify test suite XML file
-        run: ls Opollo/src/test/testCreatePOMS.xml
-      - name: Check Java version
-        run: java -version
-      - name: Check Maven version
-        run: mvn -version
+
+      - name: Install Chrome and Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium-chromedriver
+
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install -y allure
+
       - name: Run tests
         working-directory: Opollo
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml
-      - name: Check compiled test classes
+        run: |
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+
+      - name: Generate Allure report
         working-directory: Opollo
-        run: ls target/test-classes || echo "No compiled test classes found"
+        run: |
+          allure generate allure-results --clean -o allure-report
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Opollo/allure-report
+          publish_branch: gh-pages

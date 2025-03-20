@@ -8,6 +8,7 @@
             <class name="com.lkhoaa.testCases.pms.MassUpdatePhysicalBundleSKU"/>
             <class name="com.lkhoaa.testCases.pms.MassUpdateVirtualBundleSKU"/>
             <class name="com.lkhoaa.testCases.pms.MassUpdateSingleSKU"/>
+            <class name="com.lkhoaa.testCases.pms.SearchSKU"/>
         </classes>
     </test>
 </suite>
