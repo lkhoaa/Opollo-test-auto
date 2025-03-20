@@ -30,6 +30,9 @@ public class TTKRevenue {
                 }
             }
 
+            System.out.printf("Total sum of Revenue fee on TTK: ");
+            System.out.printf("%.2f\n", totalSum);
+
             workbook.close();
             fis.close();
         } catch (IOException e) {

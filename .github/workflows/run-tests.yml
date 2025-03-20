@@ -7,33 +7,44 @@ on:
 
 jobs:
   build:
-    runs-on: Ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: Set up Java
-        uses: actions/[email protected]
+        uses: actions/setup-java@v3
         with:
-          java-version: '17'
+          java-version: '18'
+          distribution: 'temurin'
+
       - name: Install Chrome and Chromedriver
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser=132.0.6834.83-0ubuntu1
-          sudo apt-get install -y chromium-chromedriver=132.0.6834.83-0ubuntu1
-        with:
-          chrome-version: 132.0.6834.83
-      - name: Set up Maven
-        uses: actions/[email protected]
-        with:
-          maven-version: 3.10.1
+          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium-chromedriver
+
+      - name: Install Allure
+        run: |
+          sudo apt-add-repository ppa:qameta/allure
+          sudo apt-get update
+          sudo apt-get install -y allure
+
       - name: Run tests
-        run: mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+        working-directory: Opollo
+        run: |
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
+
       - name: Generate Allure report
-        run: allure generate allure-results --clean
+        working-directory: Opollo
+        run: |
+          allure generate allure-results --clean -o allure-report
+
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./target/allure-report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Opollo/allure-report
           publish_branch: gh-pages

@@ -13,6 +13,7 @@ import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Duration;
 
 public class MassCreateSingleSKU {
     @Test
@@ -22,7 +23,7 @@ public class MassCreateSingleSKU {
         updateFileCreateSingleSKU.updateExcelFile(filePath);
 
         WebDriver driver = Webdriver.getChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10000);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.manage().window().maximize();
 
         System.out.println("Logging in");

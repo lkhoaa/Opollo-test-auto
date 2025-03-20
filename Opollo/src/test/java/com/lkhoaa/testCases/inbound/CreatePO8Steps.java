@@ -8,11 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.time.Duration;
+
 public class CreatePO8Steps {
     @Test
     public void createPO8Steps() throws InterruptedException {
         WebDriver driver = Webdriver.getChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         SoftAssert softAssert = new SoftAssert();
         driver.manage().window().maximize();
 

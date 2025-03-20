@@ -26,25 +26,13 @@ public class TTKPaymentFee {
                         double numericValue = Double.parseDouble(cellValue);
                         sum1 += numericValue;
                     }
-//                    Cell cell2 = row.getCell(35); //AJ
-//                    if (cell2 != null && cell2.getCellType() == CellType.STRING) {
-//                        java.lang.String cellValue = cell2.getStringCellValue();
-//                        double numericValue = Double.parseDouble(cellValue);
-//                        sum2 += numericValue;
-//                    }
-//                    Cell cell3 = row.getCell(36); //AK
-//                    if (cell3 != null && cell3.getCellType() == CellType.STRING) {
-//                        java.lang.String cellValue = cell3.getStringCellValue();
-//                        double numericValue = Double.parseDouble(cellValue);
-//                        sum3 += numericValue;
-//                    }
-
                 } catch (NumberFormatException e) {
                     System.err.print("");
                 }
             }
-
             totalSum = sum1 + sum2 + sum3;
+            System.out.printf("Total sum of Payment fee on TTK: ");
+            System.out.printf("%.2f\n", totalSum);
             workbook.close();
             fis.close();
         } catch (IOException e) {

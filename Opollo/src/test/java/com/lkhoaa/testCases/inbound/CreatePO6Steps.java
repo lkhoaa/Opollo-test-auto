@@ -1,8 +1,8 @@
 package com.lkhoaa.testCases.inbound;
 
 import com.lkhoaa.model.loginpage.LoginPage;
-import com.lkhoaa.utils.Webdriver;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 public class CreatePO6Steps {
     @Test
     public void createPO6Steps() throws InterruptedException {
-        WebDriver driver = Webdriver.getChromeDriver();
+        WebDriver driver = new ChromeDriver();
         SoftAssert softAssert = new SoftAssert();
         WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.manage().window().maximize();
@@ -19,7 +19,7 @@ public class CreatePO6Steps {
         /*Step 1: Login*/
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("***").inputPassword("***").clickOnLoginBtn();
+        loginPage.inputUsername("test01@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
 
         /*Step 2: Navigate to create PO page*/
         driver.get("https://dev-admin.onpoint.vn/purchase_order_v2/new");

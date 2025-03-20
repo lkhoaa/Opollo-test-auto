@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.time.Duration;
+
 public class CreatePO7Steps {
     @Test
     public void createPO7Steps() throws InterruptedException {
