@@ -26,11 +26,12 @@ jobs:
           sudo apt-get install -y chromium-browser
           sudo apt-get install -y chromium-chromedriver
 
-      - name: Install Allure
+      - name: Install Allure Manually
         run: |
-          sudo apt-add-repository ppa:qameta/allure
-          sudo apt-get update
-          sudo apt-get install -y allure
+          wget https://github.com/allure-framework/allure2/releases/download/2.23.0/allure-2.23.0.tgz
+          tar -xvzf allure-2.23.0.tgz
+          sudo mv allure-2.23.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
 
       - name: Run tests
         working-directory: Opollo

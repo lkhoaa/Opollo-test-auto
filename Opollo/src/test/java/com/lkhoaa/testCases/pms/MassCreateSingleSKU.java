@@ -29,7 +29,7 @@ public class MassCreateSingleSKU {
         System.out.println("Logging in");
         driver.get("https://dev-admin.onpoint.vn/sign_in");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.inputUsername("***").inputPassword("1234").clickOnLoginBtn();
+        loginPage.inputUsername("khoa.le@onpoint.vn").inputPassword("1234").clickOnLoginBtn();
 
         System.out.println("Start upload file");
         driver.get("https://dev-admin.onpoint.vn/pms/opollo_products/import_single_sku");
