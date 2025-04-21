@@ -1,46 +1,51 @@
-name: Run Inbound Tests
+name: Run Selenium Tests and Generate Allure Report
 
 on:
   push:
-    branches: [ main, master ]
-    paths:
-      - 'Opollo/**'
-      - '.github/workflows/**'
+    branches:
+      - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK 8
+      - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          java-version: '8'
-          distribution: 'adopt'
-          cache: maven
+          java-version: '18'
+          distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn -B clean compile
-        working-directory: ./Opollo
+      - name: Install Chrome and Chromedriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium-chromedriver
 
-      - name: Run Inbound Tests
-        run: mvn -B test -Dtest=com.lkhoaa.testCases.inbound.** -DtestingUrl=${{ secrets.TESTING_URL }}
-        working-directory: ./Opollo
+      - name: Install Allure Manually
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.23.0/allure-2.23.0.tgz
+          tar -xvzf allure-2.23.0.tgz
+          sudo mv allure-2.23.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/local/bin/allure
 
-      - name: Generate Allure Report
-        if: always()
-        run: mvn allure:report
-        working-directory: ./Opollo
+      - name: Run tests
+        working-directory: Opollo
+        run: |
+          mvn clean test -Dsurefire.suiteXmlFiles=src/test/testCreatePOMS.xml -DtestingUrl=https://dev-admin.onpoint.vn
 
-      - name: Archive test results
-        if: always()
-        uses: actions/upload-artifact@v3
+      - name: Generate Allure report
+        working-directory: Opollo
+        run: |
+          allure generate allure-results --clean -o allure-report
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: test-results
-          path: |
-            Opollo/target/surefire-reports
-            Opollo/target/site/allure-maven-plugin
-            Opollo/screenshots
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: Opollo/allure-report
+          publish_branch: gh-pages
